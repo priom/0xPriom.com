@@ -2,6 +2,7 @@ baseurl = "/"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 5
+relativeURLS=true
 googleAnalytics = "G-Y6X6QFNNHQ"
 
 [params]

@@ -1,2 +1,3 @@
 ipd:
-	ipfs-deploy public -p pinata -d cloudflare
+	hugo -D
+	ipfs-deploy public/ -p pinata -d cloudflare
