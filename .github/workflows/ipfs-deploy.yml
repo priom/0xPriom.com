@@ -22,4 +22,4 @@ jobs:
           echo IPFS_DEPLOY_CLOUDFLARE__API_TOKEN=${{ secrets.CF_API_TOKEN }} >> .env
           echo IPFS_DEPLOY_CLOUDFLARE__ZONE=${{ secrets.CF_ZONE }} >> .env
           echo IPFS_DEPLOY_CLOUDFLARE__RECORD=${{ secrets.CF_RECORD }} >> .env
-          npx ipfs-deploy public/ -p pinata -d cloudflare
+          npx ipfs-deploy public/ -p pinata -d cloudflare -C true -q
