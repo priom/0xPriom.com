@@ -1,18 +1,18 @@
-# name: IPFS Deploy
-# on:
-#   push:
-#     branches:
-#       - main
+name: IPFS Deploy
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   deploy:
-#     name: IPFS Deploy
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Use Node.js 14
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: '14'
+jobs:
+  deploy:
+    name: IPFS Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
         
-#       - run: npx ipfs-deploy public/ -p pinata -d cloudflare
+      - run: npx ipfs-deploy public/ -p pinata -d cloudflare
