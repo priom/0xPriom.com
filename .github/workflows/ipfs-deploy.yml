@@ -16,6 +16,8 @@ jobs:
           node-version: '14'
       - run: |
           echo "Deploying to IPFS"
+          snap install hugo
+          hugo -D
           touch .env
           echo IPFS_DEPLOY_PINATA__API_KEY=${{ secrets.PINATA_API_KEY }} >> .env
           echo IPFS_DEPLOY_PINATA__SECRET_API_KEY=${{ secrets.PINATA_API_SECRET }} >> .env
