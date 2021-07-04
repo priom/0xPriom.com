@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: '14'
       - run: |
+          echo "Deploying to IPFS"
           touch .env
           echo IPFS_DEPLOY_PINATA__API_KEY=${{ secrets.PINATA_API_KEY }} >> .env
           echo IPFS_DEPLOY_PINATA__SECRET_API_KEY=${{ secrets.PINATA_API_SECRET }} >> .env
