@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: Use Node.js 14
         uses: actions/setup-node@v2
         with:
@@ -18,7 +20,7 @@ jobs:
           echo "Deploying to IPFS"
           sudo snap install hugo 
           hugo -D
-          ls -la
+          ls -la themes/
           touch .env
           echo IPFS_DEPLOY_PINATA__API_KEY=${{ secrets.PINATA_API_KEY }} >> .env
           echo IPFS_DEPLOY_PINATA__SECRET_API_KEY=${{ secrets.PINATA_API_SECRET }} >> .env
