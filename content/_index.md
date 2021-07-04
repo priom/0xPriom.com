@@ -13,7 +13,7 @@ You can:
 - Try out [ChainSafe Files](https://app.files.chainsafe.io/), end-to-end encrypted cloud storage built with [IPFS](http://ipfs.io/) & [Filecoin](https://filecoin.io/)
 - Follow me on [Twitter](https://twitter.com/pri0m)
 - Message me on [LinkedIn](https://linkedin.com/in/priomchowdhury)
-- Check my contributions on [GitHub](https://github.com/priom)
+- Check out my [GitHub](https://github.com/priom)
 - Apply to work at [ChainSafe](https://chainsafe.io/careers)
 
 Thank you!
