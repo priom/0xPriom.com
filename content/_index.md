@@ -10,7 +10,8 @@ I studied Computer Science at Saint Mary's University.
 Previously, instructed [Blockchain Development](https://www.georgebrown.ca/programs/blockchain-development-program-t175) at George Brown College.
 
 You can:
-- Try out [ChainSafe Files](https://app.files.chainsafe.io/), end-to-end encrypted cloud storage built with [IPFS](http://ipfs.io/) & [Filecoin](https://filecoin.io/)
+- Build with [ChainSafe Storage](https://app.files.chainsafe.io/), developer friendly S3-compatible decentralized object storage on [IPFS](http://ipfs.io/) & [Filecoin](https://filecoin.io/)
+- Try out [ChainSafe Files](https://app.files.chainsafe.io/), end-to-end encrypted storage built with [IPFS](http://ipfs.io/) & [Filecoin](https://filecoin.io/)
 - Follow me on [Twitter](https://twitter.com/pri0m)
 - Message me on [LinkedIn](https://linkedin.com/in/priomchowdhury)
 - Check out my [GitHub](https://github.com/priom)
