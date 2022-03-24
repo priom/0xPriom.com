@@ -5,7 +5,7 @@ I'm **Priom Chowdhury**, Co-Founder and Chief Product Officer at [ChainSafe](htt
 
 I'm passionate about building user-friendly technology products and developer-focused engineering tools, and creating a [private and secure place](https://medium.com/chainsafe-systems/introducing-chainsafe-files-3eedabdec922) on the internet.
 
-I studied Computer Science at Saint Mary's University.
+Graduated with Bachelor of Science, Computer Science at Saint Mary's University.
 
 Previously, instructed [Blockchain Development](https://www.georgebrown.ca/programs/blockchain-development-program-t175) at George Brown College.
 
