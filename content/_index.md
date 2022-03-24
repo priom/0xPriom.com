@@ -10,7 +10,7 @@ I studied Computer Science at Saint Mary's University.
 Previously, instructed [Blockchain Development](https://www.georgebrown.ca/programs/blockchain-development-program-t175) at George Brown College.
 
 You can:
-- Launch your own NFT in minutes with (ChainSafe Gaming SDK)[https://gaming.chainsafe.io/]
+- Launch NFT & build Web 3.0 Games with [ChainSafe Gaming SDK](https://gaming.chainsafe.io/) on any EVM Blockchain
 - Try out [ChainSafe Files](https://app.files.chainsafe.io/), end-to-end encrypted storage built with [IPFS](http://ipfs.io/) & [Filecoin](https://filecoin.io/)
 - Build with [ChainSafe Storage](https://app.files.chainsafe.io/), developer friendly S3-compatible decentralized object storage on [IPFS](http://ipfs.io/) & [Filecoin](https://filecoin.io/)
 - Follow me on [Twitter](https://twitter.com/pri0m)
