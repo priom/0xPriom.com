@@ -35,7 +35,7 @@ googleAnalytics = "G-Y6X6QFNNHQ"
   [languages.en]
     languageName = "English"
     title = "Priom Chowdhury"
-    subtitle = "Co-Founder & CPO @ ChainSafe Systems"
+    subtitle = "Co-Founder @ ChainSafe Systems"
     owner = "priom"
     keywords = "priom, chainsafe, blockchain, devops, developer, web3, ipfs, filecoin, ethereum, toronto, canada"
     copyright = "All Rights Reserved by Priom"

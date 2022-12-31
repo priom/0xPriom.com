@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Rails 5 Imgur Clone Tutorial…Part 2 :: Priom Chowdhury</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rails 5 Imgur Clone Tutorial…Part 2 Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.
+Be sure to check out the first part here if you haven’t already.
+First, signup and verify a new cloudinary account by going here, it’s my referral link to cloudinary which will give me little bit extra space." />
+<meta name="keywords" content="priom, chainsafe, blockchain, devops, developer, web3, ipfs, filecoin, ethereum, toronto, canada" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="../../blog/rails-5-imgur-clone-tutorial-part-2/" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y6X6QFNNHQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-Y6X6QFNNHQ', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+<link rel="stylesheet" href="../../assets/style.css">
+
+  <link rel="stylesheet" href="../../assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="../../img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Rails 5 Imgur Clone Tutorial…Part 2">
+<meta property="og:description" content="Rails 5 Imgur Clone Tutorial…Part 2 Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.
+Be sure to check out the first part here if you haven’t already.
+First, signup and verify a new cloudinary account by going here, it’s my referral link to cloudinary which will give me little bit extra space." />
+<meta property="og:url" content="/blog/rails-5-imgur-clone-tutorial-part-2/" />
+<meta property="og:site_name" content="Priom Chowdhury" />
+
+  
+    <meta property="og:image" content="/favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2017-05-08 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="../../">
+  <div class="logo">
+    PRIOM
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="../../">About</a></li>
+        
+      
+        
+          <li><a href="../../blog">Blog</a></li>
+        
+      
+        
+          <li><a href="https://github.com/priom">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/priomchowdhury">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/pri0m">Twitter</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="../../">About</a></li>
+      
+    
+      
+        <li><a href="../../blog">Blog</a></li>
+      
+    
+      
+        <li><a href="https://github.com/priom">GitHub</a></li>
+      
+    
+      
+        <li><a href="https://linkedin.com/in/priomchowdhury">LinkedIn</a></li>
+      
+    
+      
+        <li><a href="https://twitter.com/pri0m">Twitter</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="../../blog/rails-5-imgur-clone-tutorial-part-2/">Rails 5 Imgur Clone Tutorial…Part 2</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2017-05-08 
+      </span>
+    
+    
+    <span class="post-author">:: Priom</span>
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg" alt="Rails 5 Imgur Clone"></p>
+<h1 id="rails-5-imgur-clone-tutorialpart-2">Rails 5 Imgur Clone Tutorial…Part 2<a href="#rails-5-imgur-clone-tutorialpart-2" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.</p>
+<blockquote>
+<p>Be sure to check out the first part <a href="https://medium.com/@priom/rails-5-imgur-clone-tutorial-part-1-8fa6e08d5d">here</a> if you haven’t already.</p>
+</blockquote>
+<blockquote>
+<p>First, signup and verify a new cloudinary account by going <a href="http://cloudinary.com/invites/lpov9zyyucivvxsnalc5/vvf3cm3nlh4z8lk5ndii">here</a>, it’s my referral link to cloudinary which will give me little bit extra space.</p>
+</blockquote>
+<p>Let’s start by adding few more variables to our cloudinary configuration at <strong><em>config/initializers/cloudinary.rb</em></strong></p>
+<p>Remember, the <strong><em>cloudinary.rb</em></strong> has to exactly in that folder, if you open the <strong><em>config/application.rb</em></strong> you’ll see in the comments written it says the config has to be there, it’s just how rails configuration works.</p>
+<p>Make sure your <strong>cloudinary.rb</strong> looks something like this.</p>
+<pre tabindex="0"><code>Cloudinary.config do |config|
+    config.cloud_name = ENV[&#39;CLOUDINARY_CLOUD_NAME&#39;]
+    config.api_key = ENV[&#39;CLOUDINARY_API_KEY&#39;]
+    config.api_secret = ENV[&#39;CLOUDINARY_API_SECRET&#39;]
+    config.cdn_subdomain = true
+    config.enhance_image_tag = true
+end
+</code></pre><p>Go to cloudinary dashboard and you will the <strong><em>Cloud name, API Key, API Secret</em></strong> variables which we will use. The inclusion of <strong><em>cdn_subdomain</em></strong> increases image serving performance by getting the best cdn location and <strong><em>enhance_image_tag</em></strong> adds more functions to the built in rails <strong><em>image_tag</em></strong> method.</p>
+<blockquote>
+<p>Okay, here we are dynamically setting environment variables to our application. It will pick up variables for production and development environments. You really don’t wanna hard code this as it is not safe and wise to publicize your keys and other info as these are highly sensitive. This style is highly recommended for any of your rails project not just this. It’s just really a damn good practice. You might think its just a home project but if you work at a company this is really serious so, it’s better to practice from now.</p>
+</blockquote>
+<p>Secondly, and this is the most important step, setting up your variables in your environment. We are going to use the <strong><em>dotenv</em></strong> gem. Add this to your <strong>Gemfile</strong> and run <strong><em>bundle</em></strong> in your terminal to install the gem and then restart your server.</p>
+<pre tabindex="0"><code>gem &#39;dotenv-rails&#39;, groups: [:development, :test]
+</code></pre><blockquote>
+<p>This is by far the best, easiest and simple solution and works perfectly.</p>
+</blockquote>
+<p>Now go to project’s root directory and create a file called <strong><em>.env</em></strong></p>
+<p>We are going to set our variables like this.</p>
+<pre tabindex="0"><code>export CLOUDINARY_CLOUD_NAME=
+export CLOUDINARY_API_KEY=
+export CLOUDINARY_API_SECRET=
+</code></pre><p>Just put the variables as it is without any quotes. And then add <strong><em>.env</em></strong> to your <strong><em>.gitignore</em></strong> so that it doesn’t get pushed to your GitHub repo. We are going to add Heroku cloudinary add-on and set the variable in the production environment in their way.</p>
+<p>Alright, our configuration part is done for now. If you wanna further know about the <strong>dotenv</strong> gem then go to their <a href="https://github.com/bkeepers/dotenv">github page</a> and read more.</p>
+<p>Finally, we are going to add code to our controller for uploading and saving images to the database.</p>
+<p>Go to your controller at <strong><em>pics_controller.rb</em></strong> and add to your <strong><em>new</em></strong> &amp; <strong><em>create</em></strong> method like this.</p>
+<pre tabindex="0"><code>def new
+  @pic = Pic.new
+end
+
+def create
+  @pic = Pic.new(params.require(:pic).permit(:image))
+  @pic.save
+  redirect_to @pic
+end
+</code></pre><p>What we are doing here is basically creating an <strong>instance variable</strong> called <strong><em>@pic</em></strong> and adding the <strong><em>new</em></strong> method to our <strong><em>Pic</em></strong> model which we will use it in all over our project. Later, in the create method we are allowing it to add to the database, then save it and take it to that pic page after it’s been saved to our database.</p>
+<p>Now, create a <strong><em>new.html.erb</em></strong> &amp; <strong><em>form.html.erb</em></strong> in <strong><em>app/views/pics/</em></strong> directory</p>
+<p>In your <strong><em>form.html.erb</em></strong> add this code.</p>
+<pre tabindex="0"><code>&lt;%= form_for @pic do |f| %&gt;
+  &lt;%= f.label :image do %&gt;
+    &lt;%=  f.hidden_field :image_cache %&gt;
+    &lt;%=  f.file_field :image %&gt;
+  &lt;% end %&gt;
+    
+  &lt;%= f.submit %&gt;
+&lt;% end %&gt;
+</code></pre><p>So, here we are creating a form for a pic to be added to our database and then we are going to display it in the web.</p>
+<p>Now, we going to implement the show page and controller.</p>
+<p>In your <strong><em>pics_controller.rb</em></strong> add this following code</p>
+<pre tabindex="0"><code>def show
+  @pic = Pic.find(params[:id])
+end
+</code></pre><p>Here we are pulling the data from database by their <strong><em>id</em></strong></p>
+<p>Create a new file <strong><em>show.html.erb</em></strong> in <strong><em>app/views/pics/</em></strong> directory and this simple line to display the image to the public</p>
+<pre tabindex="0"><code>&lt;%= image_tag(@pic.image.url, width: &#39;100%&#39;, crop: &#34;scale&#34;)  %&gt;
+</code></pre><p>We are also scaling the image to fit in the display so, that it looks beautiful.</p>
+<p>Great, your image is displayed now we are going to display all the images to our index/ home page. Open <strong><em>pics_controller.rb</em></strong> add this following code to <strong><em>index</em></strong> controller to get all the images from the database</p>
+<pre tabindex="0"><code>def index
+  @pics = Pic.all
+end
+</code></pre><p>In your <strong><em>index.html.erb</em></strong> add this to loop through all the images and display it to the index page.</p>
+<pre tabindex="0"><code>&lt;% @pics.each do |pic| %&gt;
+    &lt;%=  image_tag(pic.image.url, width: &#39;100%&#39;, crop: &#34;scale&#34;)  %&gt;
+&lt;% end %&gt;
+</code></pre><p>Now, we are going to prettify our app a little by adding simple bootstrap css and a navigation.</p>
+<p>Go to <a href="https://bootswatch.com/paper/bootstrap.min.css">bootstrap</a>, it’s a bootstrap material design flavor which I really like, you could use this or anything else you like. Grab the link add it to the <strong><em>head</em></strong> of your <strong><em>application.html.erb</em></strong> right below the csrf meta tags</p>
+<pre tabindex="0"><code>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://bootswatch.com/paper/bootstrap.min.css&#34;&gt;
+</code></pre><p>Now, create a <strong><em>partial</em></strong> named <strong><em>header.html.erb</em></strong> inside the <strong><em>app/views/layouts/</em></strong> directory, and add the navigation to our header</p>
+<pre tabindex="0"><code>&lt;nav class=&#34;navbar navbar-default&#34;&gt;
+  &lt;div class=&#34;container-fluid&#34;&gt;
+    &lt;div class=&#34;navbar-header&#34;&gt;
+      &lt;%= link_to &#39;Rimgur&#39;, root_path, class: &#39;navbar-brand&#39; %&gt;
+      &lt;%= link_to &#39;New Post&#39;, new_pic_path, class: &#39;navbar-brand&#39; %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre><p>And then render the header to our main application page. Add this to your <strong><em>application.html.erb</em></strong> on top <strong><em>yield</em></strong></p>
+<pre tabindex="0"><code>&lt;%= render &#39;layouts/header&#39; %&gt;
+</code></pre><p>Now, as a final step we are going to take our app live by deploying it to heroku.</p>
+<p>For our application to work on production, we need to do some modification to our <strong><em>Gemfile.</em></strong> Move the <strong><em>gem ‘sqlite’</em></strong> to <strong><em>development</em></strong> group and add <strong><em>pg</em></strong> for <strong><em>PostgreSQL</em></strong> for <strong><em>production.</em></strong></p>
+<pre tabindex="0"><code>group :development do
+  gem &#39;sqlite3&#39;
+end
+
+group :production do
+  gem &#39;pg&#39;
+end
+</code></pre><p>Then do this following to install the gems</p>
+<blockquote>
+<p>bundle</p>
+</blockquote>
+<blockquote>
+<p>gem install bundler</p>
+</blockquote>
+<p>Git add and commit all of your files.</p>
+<blockquote>
+<p>git add .; git commit -m ‘project finished’</p>
+</blockquote>
+<p>Create a new git repo in your account and our codebase to it. Follow the instructions on the screen to do <strong><em>git remote add and push</em></strong>.</p>
+<p>Now, we are ready to take it live. Create a new <a href="https://www.heroku.com/">heroku</a> account for FREE and verify it. Then, create a new heroku app in your terminal and push it.</p>
+<blockquote>
+<p>heroku create</p>
+</blockquote>
+<blockquote>
+<p>git push heroku master</p>
+</blockquote>
+<p>We are going to have migrate our schema to production for our app to work. We can do it like this.</p>
+<blockquote>
+<p>heroku run rails db:migrate</p>
+</blockquote>
+<p>Do <strong><em>heroku open</em></strong> to open the app in browser.</p>
+<p>Okay, now you are going to do the most important step for our image uploading to work.</p>
+<blockquote>
+<p>heroku addons:create cloudinary:starter</p>
+</blockquote>
+<p>Remember, we set up the environment variables for <a href="https://hackernoon.com/tagged/cloudinary">cloudinary</a> for <a href="https://hackernoon.com/tagged/development">development</a> machine, now we are going to do it for our production.</p>
+<p>Go to your heroku dashboard, then to your app, and then to the cloudinary dashboard to get our configurations.</p>
+<p>Now, in your terminal do this following to add the config variables.</p>
+<blockquote>
+<p>heroku config:set CLOUDINARY_CLOUD_NAME=</p>
+</blockquote>
+<blockquote>
+<p>heroku config:set CLOUDINARY_API_KEY=</p>
+</blockquote>
+<blockquote>
+<p>heroku config:set CLOUDINARY_API_SECRET=</p>
+</blockquote>
+<p>Try uploading a pic in your app and then check the cloudinary dashboard that it’s been added.</p>
+<p>Congratulations, you have successfully built a fully functional web app. Feel free to play around with it and make it more awesome.</p>
+<p>Here is the link to my github <a href="https://github.com/priom/rimgur">repo</a>. All the code is hosted here for your reference.</p>
+<blockquote>
+<p>Thank you for reading it, hope you enjoyed it and will use this knowledge to build something awesome.</p>
+</blockquote>
+<blockquote>
+<p>LIKE &amp; SHARE if you have liked my post. Please comment below any feedbacks, suggestions or requests. Also please visit my <a href="http://priom.dev">website</a>. Subscribe me if you would like to receive future posts to your inbox.</p>
+</blockquote>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+      
+        <div class="copyright copyright--user">
+          <span> &copy; 2022 All Rights Reserved by Priom</span>
+      
+        </div>
+    </div>
+  </footer>
+  
+  <script src="../../assets/main.js"></script>
+  <script src="../../assets/prism.js"></script>
+  
+  
+  
+
+  
+  
+</div>
+
+</body>
+</html>
