@@ -1,358 +1,304 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blogs on Priom Chowdhury</title>
-    <link>/blog/</link>
-    <description>Recent content in Blogs on Priom Chowdhury</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>All Rights Reserved by Priom</copyright>
-    <lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Deployment Automation for Goerli testnet in 10 minutes</title>
-      <link>/blog/deployment-automation-for-goerli-testnet-in-10-minutes/</link>
-      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/deployment-automation-for-goerli-testnet-in-10-minutes/</guid>
-      <description>Hello world, happy new year to everyone. Hope you are having a great start to 2019.
-Today, I’m going to share a short tutorial to quickly deploy the new Goerli Proof-of-Authority cross-client test network which was originally developed at [ETHBerlin](https://ethberlin.com) in September 2018 and then we, Afri (@5chdn) and ChainSafe (@chainsafeth), have been actively developing Goerli. As of now, Goerli is supported in Geth, Parity, Pantheon, Nethermind and EthereumJS. If you would like to follow the current development of Goerli, fork the Goerli testnet repo.</description>
-      <content>&lt;p&gt;Hello world, happy new year to everyone. Hope you are having a great start to 2019.&lt;/p&gt;
-&lt;h3 id=&#34;today-im-going-to-share-a-short-tutorial-to-quickly-deploy-the-new-goerlihttpsgoerlicom-proof-of-authority-cross-client-test-network-which-was-originally-developed-at-ethberlinhttpsethberlincom-in-september-2018-and-then-we-afrihttpstwittercom5chdn-5chdn-and-chainsafehttpstwittercomchainsafeth-chainsafeth-have-been-actively-developing-goerli-as-of-now-goerli-is-supported-in-gethhttpsgithubcomethereumgo-ethereum-parityhttpsgithubcomparitytechparity-ethereum-pantheonhttpsgithubcompegasysengpantheon-nethermindhttpsgithubcomnethermindethnethermind-and-ethereumjshttpsgithubcomethereumjsethereumjs-client&#34;&gt;Today, I’m going to share a short tutorial to quickly deploy the new &lt;strong&gt;&lt;a href=&#34;https://goerli.com&#34;&gt;Goerli&lt;/a&gt;&lt;/strong&gt; Proof-of-Authority cross-client test network which was originally developed at [&lt;strong&gt;ETHBerlin]&lt;/strong&gt;(&lt;a href=&#34;https://ethberlin.com&#34;&gt;https://ethberlin.com&lt;/a&gt;) in September 2018 and then we, &lt;a href=&#34;https://twitter.com/5chdn&#34;&gt;Afri&lt;/a&gt; (@5chdn) and &lt;a href=&#34;https://twitter.com/chainsafeth&#34;&gt;ChainSafe&lt;/a&gt; (@chainsafeth), have been actively developing &lt;strong&gt;Goerli&lt;/strong&gt;. As of now, Goerli &lt;strong&gt;is&lt;/strong&gt; supported in &lt;a href=&#34;https://github.com/ethereum/g**o-ethereum&#34;&gt;Geth&lt;/a&gt;, &lt;a href=&#34;https://github.com/paritytech/parity-ethereum&#34;&gt;Parity&lt;/a&gt;, &lt;a href=&#34;https://github.com/PegaSysEng/pantheon&#34;&gt;Pantheon&lt;/a&gt;, &lt;a href=&#34;https://github.com/NethermindEth/nethermind&#34;&gt;Nethermind&lt;/a&gt; and &lt;a href=&#34;https://github.com/ethereumjs/ethereumjs-client&#34;&gt;&lt;strong&gt;EthereumJS&lt;/strong&gt;&lt;/a&gt;.&lt;/h3&gt;
-&lt;h4 id=&#34;if-you-would-like-to-follow-the-current-development-of-goerli-fork-the-goerli-testnet-repohttpsgithubcomgoerlitestnet&#34;&gt;If you would like to follow the current development of &lt;strong&gt;Goerli&lt;/strong&gt;, fork the &lt;strong&gt;Goerli&lt;/strong&gt; testnet &lt;a href=&#34;https://github.com/goerli/testnet&#34;&gt;repo&lt;/a&gt;.&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/4000/1*2IvbXbp80TjyqbGKJMIuoQ.jpeg&#34; alt=&#34;ETHBerlin — Goerli Demo&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Let’s get started. These steps will work on any &lt;strong&gt;UNIX system (Mac &amp;amp; Linux).&lt;/strong&gt; First, go ahead and create a &lt;strong&gt;GCP (Google Cloud Platform)&lt;/strong&gt; account &lt;a href=&#34;https://cloud.google.com/&#34;&gt;here&lt;/a&gt; and then create a project. By default, Google gives $300 worth of free credits for a year.&lt;/p&gt;
-&lt;p&gt;Then, we need &lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt;, it is an open source tool to easily create reusable and modular infrastructure deployment automation code.&lt;/p&gt;
-&lt;p&gt;To install it on &lt;strong&gt;Mac,&lt;/strong&gt; you can use &lt;a href=&#34;https://brew.sh/&#34;&gt;brew&lt;/a&gt;, if you don’t have &lt;strong&gt;brew&lt;/strong&gt;, you can install it using this script. Once, you are done, then go ahead and install using the next command.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Priom Chowdhury</title><link>/blog/</link><description>Recent content in Blogs on Priom Chowdhury</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>All Rights Reserved by Priom</copyright><lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Deployment Automation for Goerli testnet in 10 minutes</title><link>/blog/deployment-automation-for-goerli-testnet-in-10-minutes/</link><pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate><guid>/blog/deployment-automation-for-goerli-testnet-in-10-minutes/</guid><description>Hello world, happy new year to everyone. Hope you are having a great start to 2019.
+Today, I’m going to share a short tutorial to quickly deploy the new Goerli Proof-of-Authority cross-client test network which was originally developed at [ETHBerlin](https://ethberlin.com) in September 2018 and then we, Afri (@5chdn) and ChainSafe (@chainsafeth), have been actively developing Goerli. As of now, Goerli is supported in Geth, Parity, Pantheon, Nethermind and EthereumJS. If you would like to follow the current development of Goerli, fork the Goerli testnet repo.</description><content>&lt;p>Hello world, happy new year to everyone. Hope you are having a great start to 2019.&lt;/p>
+&lt;h3 id="today-im-going-to-share-a-short-tutorial-to-quickly-deploy-the-new-goerlihttpsgoerlicom-proof-of-authority-cross-client-test-network-which-was-originally-developed-at-ethberlinhttpsethberlincom-in-september-2018-and-then-we-afrihttpstwittercom5chdn-5chdn-and-chainsafehttpstwittercomchainsafeth-chainsafeth-have-been-actively-developing-goerli-as-of-now-goerli-is-supported-in-gethhttpsgithubcomethereumgo-ethereum-parityhttpsgithubcomparitytechparity-ethereum-pantheonhttpsgithubcompegasysengpantheon-nethermindhttpsgithubcomnethermindethnethermind-and-ethereumjshttpsgithubcomethereumjsethereumjs-client">Today, I’m going to share a short tutorial to quickly deploy the new &lt;strong>&lt;a href="https://goerli.com">Goerli&lt;/a>&lt;/strong> Proof-of-Authority cross-client test network which was originally developed at [&lt;strong>ETHBerlin]&lt;/strong>(&lt;a href="https://ethberlin.com">https://ethberlin.com&lt;/a>) in September 2018 and then we, &lt;a href="https://twitter.com/5chdn">Afri&lt;/a> (@5chdn) and &lt;a href="https://twitter.com/chainsafeth">ChainSafe&lt;/a> (@chainsafeth), have been actively developing &lt;strong>Goerli&lt;/strong>. As of now, Goerli &lt;strong>is&lt;/strong> supported in &lt;a href="https://github.com/ethereum/g**o-ethereum">Geth&lt;/a>, &lt;a href="https://github.com/paritytech/parity-ethereum">Parity&lt;/a>, &lt;a href="https://github.com/PegaSysEng/pantheon">Pantheon&lt;/a>, &lt;a href="https://github.com/NethermindEth/nethermind">Nethermind&lt;/a> and &lt;a href="https://github.com/ethereumjs/ethereumjs-client">&lt;strong>EthereumJS&lt;/strong>&lt;/a>.&lt;/h3>
+&lt;h4 id="if-you-would-like-to-follow-the-current-development-of-goerli-fork-the-goerli-testnet-repohttpsgithubcomgoerlitestnet">If you would like to follow the current development of &lt;strong>Goerli&lt;/strong>, fork the &lt;strong>Goerli&lt;/strong> testnet &lt;a href="https://github.com/goerli/testnet">repo&lt;/a>.&lt;/h4>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/4000/1*2IvbXbp80TjyqbGKJMIuoQ.jpeg" alt="ETHBerlin — Goerli Demo">&lt;/p>
+&lt;p>Let’s get started. These steps will work on any &lt;strong>UNIX system (Mac &amp;amp; Linux).&lt;/strong> First, go ahead and create a &lt;strong>GCP (Google Cloud Platform)&lt;/strong> account &lt;a href="https://cloud.google.com/">here&lt;/a> and then create a project. By default, Google gives $300 worth of free credits for a year.&lt;/p>
+&lt;p>Then, we need &lt;a href="https://www.terraform.io/">Terraform&lt;/a>, it is an open source tool to easily create reusable and modular infrastructure deployment automation code.&lt;/p>
+&lt;p>To install it on &lt;strong>Mac,&lt;/strong> you can use &lt;a href="https://brew.sh/">brew&lt;/a>, if you don’t have &lt;strong>brew&lt;/strong>, you can install it using this script. Once, you are done, then go ahead and install using the next command.&lt;/p>
+&lt;pre tabindex="0">&lt;code>/usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
 brew install terraform
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you are on any &lt;strong&gt;Linux,&lt;/strong&gt; follow the quick walkthrough &lt;a href=&#34;https://learn.hashicorp.com/terraform/getting-started/install.html&#34;&gt;&lt;em&gt;here&lt;/em&gt;&lt;/a&gt; to install Terraform. &lt;strong&gt;Terraform&lt;/strong&gt; has some excellent documentation on how to get up and running quickly.&lt;/p&gt;
-&lt;p&gt;Next step, you have to create a &lt;em&gt;service account key&lt;/em&gt; in GCP.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/806/1*QW8rRWOD6N_05jZ576x4rA.png&#34; alt=&#34;GCP IAM&#34;&gt;&lt;/p&gt;
-&lt;p&gt;On the creation screen, give it a name and description. For the role access, make sure you give it &lt;strong&gt;&lt;em&gt;Compute Engine Admin&lt;/em&gt;&lt;/strong&gt; role. Next, create your key and download the &lt;strong&gt;&lt;em&gt;JSON&lt;/em&gt;&lt;/strong&gt; key. Make sure to &lt;strong&gt;&lt;em&gt;securely&lt;/em&gt;&lt;/strong&gt; store this file, this file is &lt;strong&gt;&lt;em&gt;very very private and sensitive&lt;/em&gt;&lt;/strong&gt;! And &lt;strong&gt;&lt;em&gt;DO NOT EVER PUSH THIS FILE TO YOUR PUBLIC REPO!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/2560/1*fIB74o-aFsMmilzh9d3P7w.png&#34; alt=&#34;GCP service account key creation&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Now that we have our necessary steps done, we will start writing our Terraform deployment script.&lt;/p&gt;
-&lt;p&gt;In your project directory, copy the &lt;strong&gt;&lt;em&gt;JSON&lt;/em&gt;&lt;/strong&gt; file which you just downloaded and then create a file called &lt;strong&gt;&lt;em&gt;goerli.tf&lt;/em&gt;&lt;/strong&gt; (you can name it whatever you want).&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;This is what your Terraform file will look like. In the first block, we define the provider which is &lt;em&gt;google&lt;/em&gt; for us, inside that we define the location for the &lt;em&gt;credentials.json&lt;/em&gt; and your &lt;em&gt;project ID&lt;/em&gt; which you will find in your project settings.&lt;/p&gt;
-&lt;p&gt;Next, we define our &lt;em&gt;virtual instance’s name, region, cpu, ram, hard disk, operating system, firewalls, and other necessary configs.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;At the very bottom, we define our &lt;em&gt;startup script&lt;/em&gt; where the list of commands will run after the virtual instance is created to do the basic housekeeping stuff like updating the &lt;strong&gt;OS&lt;/strong&gt;, installing &lt;a href=&#34;https://nodejs.org&#34;&gt;&lt;strong&gt;Node.js&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://geth.ethereum.org/&#34;&gt;Geth&lt;/a&gt; (the client which will be running Goerli at).&lt;/p&gt;
-&lt;p&gt;Now, in your terminal, run the command:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;terraform apply
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And, you should see your instance is being created in the GCP compute engine console.&lt;/p&gt;
-&lt;h4 id=&#34;congratulations-you-have-successfully-deployed-your-virtual-machine-on-the-cloud---&#34;&gt;Congratulations, you have successfully deployed your virtual machine on the cloud! 👏 👏 👏&lt;/h4&gt;
-&lt;p&gt;Next, we will SSH into our newly created VM. GCP provides few ways to connect to your remote machine rather than traditional methods; creating and managing your SSH keys like other cloud providers so, we will use the &lt;strong&gt;gcloud&lt;/strong&gt; utils. You need to have &lt;strong&gt;gcloud&lt;/strong&gt; installed on your computer so, go ahead and follow the instructions &lt;a href=&#34;https://cloud.google.com/sdk/install&#34;&gt;&lt;em&gt;here&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/3052/1*3Hat1Xt8itUFxqFHI9qDVQ.png&#34; alt=&#34;gcloud command in GCP console&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Once, you SSH’d into your VM, go ahead and clone the &lt;strong&gt;Goerli&lt;/strong&gt; testnet repo from &lt;a href=&#34;https://github.com/goerli/testnet&#34;&gt;Github&lt;/a&gt; into your home directory and then we will run a few commands.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;geth init ./testnet/geth/goerli.genesis
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is to initialize &lt;strong&gt;Goerli&lt;/strong&gt;’s &lt;strong&gt;Genesis&lt;/strong&gt; block.&lt;/p&gt;
-&lt;p&gt;We are almost done, next, we will copy the &lt;em&gt;boot nodes (the IP addresses of the peer nodes)&lt;/em&gt; to the &lt;em&gt;&lt;strong&gt;geth&lt;/strong&gt; data directory&lt;/em&gt;.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cp testnet/geth/static-nodes.json .ethereum
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, we will boot up our &lt;strong&gt;Goerli&lt;/strong&gt; node&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nohup geth --networkid 6284 &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will continue to run in the background. &lt;em&gt;6284&lt;/em&gt; is the network ID of &lt;strong&gt;Goerli&lt;/strong&gt; so when running Geth we need to specify as the — &lt;em&gt;goerli&lt;/em&gt; hasn’t been merged to &lt;strong&gt;Geth&lt;/strong&gt; master yet. Here is the &lt;a href=&#34;https://github.com/ethereum/go-ethereum/pull/18121&#34;&gt;&lt;em&gt;link&lt;/em&gt;&lt;/a&gt; to the PR.&lt;/p&gt;
-&lt;p&gt;You will see a file called &lt;em&gt;nohup.out,&lt;/em&gt; where it stores the log. Now, if you do:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tail -f nohup.out
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You should see the terminal output of &lt;strong&gt;Geth&lt;/strong&gt; running the &lt;strong&gt;Goerli&lt;/strong&gt; network.&lt;/p&gt;
-&lt;h4 id=&#34;congrats-we-are-done-here-you-are-successfully-one-of-the-peers-in-the-goerli-network-&#34;&gt;Congrats, we are done here, you are successfully one of the peers in the &lt;strong&gt;Goerli&lt;/strong&gt; network! 🎉🎉🎉&lt;/h4&gt;
-&lt;p&gt;You can use the same Terraform file by just tweaking a little bit to automate your deployment to any cloud provider like AWS, Azure, AliCloud, DigitalOcean, or even Heroku. You can also customize the current configuration to play with it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Here is a list of a few useful resources:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/ethereum/go-ethereum/wiki/geth&#34;&gt;&lt;strong&gt;ethereum/go-ethereum&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Official Go implementation of the Ethereum protocol - ethereum/go-ethereum&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/docs/providers/google/index.html&#34;&gt;&lt;strong&gt;Provider: Google Cloud Platform - Terraform by HashiCorp&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;The Google provider is used to configure your Google Cloud Platform infrastructure&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/compute/docs/concepts&#34;&gt;&lt;strong&gt;Concepts | Compute Engine | Google Cloud&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Google Cloud delivers secure, open, intelligent, and transformative tools to help enterprises modernize for today&amp;rsquo;s digital world.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;if-you-like-this-article-please-give-some--if-you-have-any-questions-and-feedbacks-please-leave-comments-below-you-can-also-reach-me-in-twitterhttpstwittercompri0m-at-pri0mhttpstwittercompri0m-and-follow-me-on-githubhttpsgithubcompriom&#34;&gt;If you like this article, please give some 👏🏻. If you have any questions and feedbacks, please leave comments below. You can also reach me in &lt;a href=&#34;https://twitter.com/pri0m&#34;&gt;Twitter&lt;/a&gt; at @&lt;a href=&#34;https://twitter.com/pri0m&#34;&gt;pri0m&lt;/a&gt; and follow me on &lt;a href=&#34;https://github.com/priom&#34;&gt;Github&lt;/a&gt;.&lt;/h3&gt;
-&lt;h3 id=&#34;follow-chainsafe-systemshttpsmediumcomu8bf3eecb7075-to-learn-more-about-ethereum-and-upcoming-development-updates-reach-out-to-us-in-twitterhttpstwittercomchainsafeth-at-chainsafethhttpstwittercomchainsafeth&#34;&gt;Follow &lt;a href=&#34;https://medium.com/u/8bf3eecb7075&#34;&gt;ChainSafe Systems&lt;/a&gt;, to learn more about Ethereum and upcoming development updates. Reach out to us in &lt;a href=&#34;https://twitter.com/chainsafeth&#34;&gt;Twitter&lt;/a&gt; at &lt;a href=&#34;https://twitter.com/chainsafeth&#34;&gt;@chainsafeth&lt;/a&gt;.&lt;/h3&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Rails 5 Imgur Clone Tutorial…Part 2</title>
-      <link>/blog/rails-5-imgur-clone-tutorial-part-2/</link>
-      <pubDate>Mon, 08 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/rails-5-imgur-clone-tutorial-part-2/</guid>
-      <description>Rails 5 Imgur Clone Tutorial…Part 2 Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.
+&lt;/code>&lt;/pre>&lt;p>If you are on any &lt;strong>Linux,&lt;/strong> follow the quick walkthrough &lt;a href="https://learn.hashicorp.com/terraform/getting-started/install.html">&lt;em>here&lt;/em>&lt;/a> to install Terraform. &lt;strong>Terraform&lt;/strong> has some excellent documentation on how to get up and running quickly.&lt;/p>
+&lt;p>Next step, you have to create a &lt;em>service account key&lt;/em> in GCP.&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/806/1*QW8rRWOD6N_05jZ576x4rA.png" alt="GCP IAM">&lt;/p>
+&lt;p>On the creation screen, give it a name and description. For the role access, make sure you give it &lt;strong>&lt;em>Compute Engine Admin&lt;/em>&lt;/strong> role. Next, create your key and download the &lt;strong>&lt;em>JSON&lt;/em>&lt;/strong> key. Make sure to &lt;strong>&lt;em>securely&lt;/em>&lt;/strong> store this file, this file is &lt;strong>&lt;em>very very private and sensitive&lt;/em>&lt;/strong>! And &lt;strong>&lt;em>DO NOT EVER PUSH THIS FILE TO YOUR PUBLIC REPO!&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/2560/1*fIB74o-aFsMmilzh9d3P7w.png" alt="GCP service account key creation">&lt;/p>
+&lt;p>Now that we have our necessary steps done, we will start writing our Terraform deployment script.&lt;/p>
+&lt;p>In your project directory, copy the &lt;strong>&lt;em>JSON&lt;/em>&lt;/strong> file which you just downloaded and then create a file called &lt;strong>&lt;em>goerli.tf&lt;/em>&lt;/strong> (you can name it whatever you want).&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>This is what your Terraform file will look like. In the first block, we define the provider which is &lt;em>google&lt;/em> for us, inside that we define the location for the &lt;em>credentials.json&lt;/em> and your &lt;em>project ID&lt;/em> which you will find in your project settings.&lt;/p>
+&lt;p>Next, we define our &lt;em>virtual instance’s name, region, cpu, ram, hard disk, operating system, firewalls, and other necessary configs.&lt;/em>&lt;/p>
+&lt;p>At the very bottom, we define our &lt;em>startup script&lt;/em> where the list of commands will run after the virtual instance is created to do the basic housekeeping stuff like updating the &lt;strong>OS&lt;/strong>, installing &lt;a href="https://nodejs.org">&lt;strong>Node.js&lt;/strong>&lt;/a> and &lt;a href="https://geth.ethereum.org/">Geth&lt;/a> (the client which will be running Goerli at).&lt;/p>
+&lt;p>Now, in your terminal, run the command:&lt;/p>
+&lt;pre tabindex="0">&lt;code>terraform apply
+&lt;/code>&lt;/pre>&lt;p>And, you should see your instance is being created in the GCP compute engine console.&lt;/p>
+&lt;h4 id="congratulations-you-have-successfully-deployed-your-virtual-machine-on-the-cloud---">Congratulations, you have successfully deployed your virtual machine on the cloud! 👏 👏 👏&lt;/h4>
+&lt;p>Next, we will SSH into our newly created VM. GCP provides few ways to connect to your remote machine rather than traditional methods; creating and managing your SSH keys like other cloud providers so, we will use the &lt;strong>gcloud&lt;/strong> utils. You need to have &lt;strong>gcloud&lt;/strong> installed on your computer so, go ahead and follow the instructions &lt;a href="https://cloud.google.com/sdk/install">&lt;em>here&lt;/em>&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/3052/1*3Hat1Xt8itUFxqFHI9qDVQ.png" alt="gcloud command in GCP console">&lt;/p>
+&lt;p>Once, you SSH’d into your VM, go ahead and clone the &lt;strong>Goerli&lt;/strong> testnet repo from &lt;a href="https://github.com/goerli/testnet">Github&lt;/a> into your home directory and then we will run a few commands.&lt;/p>
+&lt;pre tabindex="0">&lt;code>geth init ./testnet/geth/goerli.genesis
+&lt;/code>&lt;/pre>&lt;p>This is to initialize &lt;strong>Goerli&lt;/strong>’s &lt;strong>Genesis&lt;/strong> block.&lt;/p>
+&lt;p>We are almost done, next, we will copy the &lt;em>boot nodes (the IP addresses of the peer nodes)&lt;/em> to the &lt;em>&lt;strong>geth&lt;/strong> data directory&lt;/em>.&lt;/p>
+&lt;pre tabindex="0">&lt;code>cp testnet/geth/static-nodes.json .ethereum
+&lt;/code>&lt;/pre>&lt;p>Now, we will boot up our &lt;strong>Goerli&lt;/strong> node&lt;/p>
+&lt;pre tabindex="0">&lt;code>nohup geth --networkid 6284 &amp;amp;
+&lt;/code>&lt;/pre>&lt;p>This will continue to run in the background. &lt;em>6284&lt;/em> is the network ID of &lt;strong>Goerli&lt;/strong> so when running Geth we need to specify as the — &lt;em>goerli&lt;/em> hasn’t been merged to &lt;strong>Geth&lt;/strong> master yet. Here is the &lt;a href="https://github.com/ethereum/go-ethereum/pull/18121">&lt;em>link&lt;/em>&lt;/a> to the PR.&lt;/p>
+&lt;p>You will see a file called &lt;em>nohup.out,&lt;/em> where it stores the log. Now, if you do:&lt;/p>
+&lt;pre tabindex="0">&lt;code>tail -f nohup.out
+&lt;/code>&lt;/pre>&lt;p>You should see the terminal output of &lt;strong>Geth&lt;/strong> running the &lt;strong>Goerli&lt;/strong> network.&lt;/p>
+&lt;h4 id="congrats-we-are-done-here-you-are-successfully-one-of-the-peers-in-the-goerli-network-">Congrats, we are done here, you are successfully one of the peers in the &lt;strong>Goerli&lt;/strong> network! 🎉🎉🎉&lt;/h4>
+&lt;p>You can use the same Terraform file by just tweaking a little bit to automate your deployment to any cloud provider like AWS, Azure, AliCloud, DigitalOcean, or even Heroku. You can also customize the current configuration to play with it.&lt;/p>
+&lt;p>&lt;strong>Here is a list of a few useful resources:&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://github.com/ethereum/go-ethereum/wiki/geth">&lt;strong>ethereum/go-ethereum&lt;/strong>&lt;/a>&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->Official Go implementation of the Ethereum protocol - ethereum/go-ethereum&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;a href="https://www.terraform.io/docs/providers/google/index.html">&lt;strong>Provider: Google Cloud Platform - Terraform by HashiCorp&lt;/strong>&lt;/a>&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->The Google provider is used to configure your Google Cloud Platform infrastructure&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;a href="https://cloud.google.com/compute/docs/concepts">&lt;strong>Concepts | Compute Engine | Google Cloud&lt;/strong>&lt;/a>&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->Google Cloud delivers secure, open, intelligent, and transformative tools to help enterprises modernize for today&amp;rsquo;s digital world.&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="if-you-like-this-article-please-give-some--if-you-have-any-questions-and-feedbacks-please-leave-comments-below-you-can-also-reach-me-in-twitterhttpstwittercompri0m-at-pri0mhttpstwittercompri0m-and-follow-me-on-githubhttpsgithubcompriom">If you like this article, please give some 👏🏻. If you have any questions and feedbacks, please leave comments below. You can also reach me in &lt;a href="https://twitter.com/pri0m">Twitter&lt;/a> at @&lt;a href="https://twitter.com/pri0m">pri0m&lt;/a> and follow me on &lt;a href="https://github.com/priom">Github&lt;/a>.&lt;/h3>
+&lt;h3 id="follow-chainsafe-systemshttpsmediumcomu8bf3eecb7075-to-learn-more-about-ethereum-and-upcoming-development-updates-reach-out-to-us-in-twitterhttpstwittercomchainsafeth-at-chainsafethhttpstwittercomchainsafeth">Follow &lt;a href="https://medium.com/u/8bf3eecb7075">ChainSafe Systems&lt;/a>, to learn more about Ethereum and upcoming development updates. Reach out to us in &lt;a href="https://twitter.com/chainsafeth">Twitter&lt;/a> at &lt;a href="https://twitter.com/chainsafeth">@chainsafeth&lt;/a>.&lt;/h3></content></item><item><title>Rails 5 Imgur Clone Tutorial…Part 2</title><link>/blog/rails-5-imgur-clone-tutorial-part-2/</link><pubDate>Mon, 08 May 2017 00:00:00 +0000</pubDate><guid>/blog/rails-5-imgur-clone-tutorial-part-2/</guid><description>Rails 5 Imgur Clone Tutorial…Part 2 Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.
 Be sure to check out the first part here if you haven’t already.
-First, signup and verify a new cloudinary account by going here, it’s my referral link to cloudinary which will give me little bit extra space.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg&#34; alt=&#34;Rails 5 Imgur Clone&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;rails-5-imgur-clone-tutorialpart-2&#34;&gt;Rails 5 Imgur Clone Tutorial…Part 2&lt;/h1&gt;
-&lt;p&gt;Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Be sure to check out the first part &lt;a href=&#34;https://medium.com/@priom/rails-5-imgur-clone-tutorial-part-1-8fa6e08d5d&#34;&gt;here&lt;/a&gt; if you haven’t already.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;First, signup and verify a new cloudinary account by going &lt;a href=&#34;http://cloudinary.com/invites/lpov9zyyucivvxsnalc5/vvf3cm3nlh4z8lk5ndii&#34;&gt;here&lt;/a&gt;, it’s my referral link to cloudinary which will give me little bit extra space.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Let’s start by adding few more variables to our cloudinary configuration at &lt;strong&gt;&lt;em&gt;config/initializers/cloudinary.rb&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Remember, the &lt;strong&gt;&lt;em&gt;cloudinary.rb&lt;/em&gt;&lt;/strong&gt; has to exactly in that folder, if you open the &lt;strong&gt;&lt;em&gt;config/application.rb&lt;/em&gt;&lt;/strong&gt; you’ll see in the comments written it says the config has to be there, it’s just how rails configuration works.&lt;/p&gt;
-&lt;p&gt;Make sure your &lt;strong&gt;cloudinary.rb&lt;/strong&gt; looks something like this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Cloudinary.config do |config|
-    config.cloud_name = ENV[&amp;#39;CLOUDINARY_CLOUD_NAME&amp;#39;]
-    config.api_key = ENV[&amp;#39;CLOUDINARY_API_KEY&amp;#39;]
-    config.api_secret = ENV[&amp;#39;CLOUDINARY_API_SECRET&amp;#39;]
-    config.cdn_subdomain = true
-    config.enhance_image_tag = true
+First, signup and verify a new cloudinary account by going here, it’s my referral link to cloudinary which will give me little bit extra space.</description><content>&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg" alt="Rails 5 Imgur Clone">&lt;/p>
+&lt;h1 id="rails-5-imgur-clone-tutorialpart-2">Rails 5 Imgur Clone Tutorial…Part 2&lt;/h1>
+&lt;p>Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.&lt;/p>
+&lt;blockquote>
+&lt;p>Be sure to check out the first part &lt;a href="https://medium.com/@priom/rails-5-imgur-clone-tutorial-part-1-8fa6e08d5d">here&lt;/a> if you haven’t already.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>First, signup and verify a new cloudinary account by going &lt;a href="http://cloudinary.com/invites/lpov9zyyucivvxsnalc5/vvf3cm3nlh4z8lk5ndii">here&lt;/a>, it’s my referral link to cloudinary which will give me little bit extra space.&lt;/p>
+&lt;/blockquote>
+&lt;p>Let’s start by adding few more variables to our cloudinary configuration at &lt;strong>&lt;em>config/initializers/cloudinary.rb&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>Remember, the &lt;strong>&lt;em>cloudinary.rb&lt;/em>&lt;/strong> has to exactly in that folder, if you open the &lt;strong>&lt;em>config/application.rb&lt;/em>&lt;/strong> you’ll see in the comments written it says the config has to be there, it’s just how rails configuration works.&lt;/p>
+&lt;p>Make sure your &lt;strong>cloudinary.rb&lt;/strong> looks something like this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Cloudinary.config do |config|
+config.cloud_name = ENV[&amp;#39;CLOUDINARY_CLOUD_NAME&amp;#39;]
+config.api_key = ENV[&amp;#39;CLOUDINARY_API_KEY&amp;#39;]
+config.api_secret = ENV[&amp;#39;CLOUDINARY_API_SECRET&amp;#39;]
+config.cdn_subdomain = true
+config.enhance_image_tag = true
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Go to cloudinary dashboard and you will the &lt;strong&gt;&lt;em&gt;Cloud name, API Key, API Secret&lt;/em&gt;&lt;/strong&gt; variables which we will use. The inclusion of &lt;strong&gt;&lt;em&gt;cdn_subdomain&lt;/em&gt;&lt;/strong&gt; increases image serving performance by getting the best cdn location and &lt;strong&gt;&lt;em&gt;enhance_image_tag&lt;/em&gt;&lt;/strong&gt; adds more functions to the built in rails &lt;strong&gt;&lt;em&gt;image_tag&lt;/em&gt;&lt;/strong&gt; method.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Okay, here we are dynamically setting environment variables to our application. It will pick up variables for production and development environments. You really don’t wanna hard code this as it is not safe and wise to publicize your keys and other info as these are highly sensitive. This style is highly recommended for any of your rails project not just this. It’s just really a damn good practice. You might think its just a home project but if you work at a company this is really serious so, it’s better to practice from now.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Secondly, and this is the most important step, setting up your variables in your environment. We are going to use the &lt;strong&gt;&lt;em&gt;dotenv&lt;/em&gt;&lt;/strong&gt; gem. Add this to your &lt;strong&gt;Gemfile&lt;/strong&gt; and run &lt;strong&gt;&lt;em&gt;bundle&lt;/em&gt;&lt;/strong&gt; in your terminal to install the gem and then restart your server.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gem &amp;#39;dotenv-rails&amp;#39;, groups: [:development, :test]
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;This is by far the best, easiest and simple solution and works perfectly.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Now go to project’s root directory and create a file called &lt;strong&gt;&lt;em&gt;.env&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;We are going to set our variables like this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export CLOUDINARY_CLOUD_NAME=
+&lt;/code>&lt;/pre>&lt;p>Go to cloudinary dashboard and you will the &lt;strong>&lt;em>Cloud name, API Key, API Secret&lt;/em>&lt;/strong> variables which we will use. The inclusion of &lt;strong>&lt;em>cdn_subdomain&lt;/em>&lt;/strong> increases image serving performance by getting the best cdn location and &lt;strong>&lt;em>enhance_image_tag&lt;/em>&lt;/strong> adds more functions to the built in rails &lt;strong>&lt;em>image_tag&lt;/em>&lt;/strong> method.&lt;/p>
+&lt;blockquote>
+&lt;p>Okay, here we are dynamically setting environment variables to our application. It will pick up variables for production and development environments. You really don’t wanna hard code this as it is not safe and wise to publicize your keys and other info as these are highly sensitive. This style is highly recommended for any of your rails project not just this. It’s just really a damn good practice. You might think its just a home project but if you work at a company this is really serious so, it’s better to practice from now.&lt;/p>
+&lt;/blockquote>
+&lt;p>Secondly, and this is the most important step, setting up your variables in your environment. We are going to use the &lt;strong>&lt;em>dotenv&lt;/em>&lt;/strong> gem. Add this to your &lt;strong>Gemfile&lt;/strong> and run &lt;strong>&lt;em>bundle&lt;/em>&lt;/strong> in your terminal to install the gem and then restart your server.&lt;/p>
+&lt;pre tabindex="0">&lt;code>gem &amp;#39;dotenv-rails&amp;#39;, groups: [:development, :test]
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>This is by far the best, easiest and simple solution and works perfectly.&lt;/p>
+&lt;/blockquote>
+&lt;p>Now go to project’s root directory and create a file called &lt;strong>&lt;em>.env&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>We are going to set our variables like this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>export CLOUDINARY_CLOUD_NAME=
 export CLOUDINARY_API_KEY=
 export CLOUDINARY_API_SECRET=
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Just put the variables as it is without any quotes. And then add &lt;strong&gt;&lt;em&gt;.env&lt;/em&gt;&lt;/strong&gt; to your &lt;strong&gt;&lt;em&gt;.gitignore&lt;/em&gt;&lt;/strong&gt; so that it doesn’t get pushed to your GitHub repo. We are going to add Heroku cloudinary add-on and set the variable in the production environment in their way.&lt;/p&gt;
-&lt;p&gt;Alright, our configuration part is done for now. If you wanna further know about the &lt;strong&gt;dotenv&lt;/strong&gt; gem then go to their &lt;a href=&#34;https://github.com/bkeepers/dotenv&#34;&gt;github page&lt;/a&gt; and read more.&lt;/p&gt;
-&lt;p&gt;Finally, we are going to add code to our controller for uploading and saving images to the database.&lt;/p&gt;
-&lt;p&gt;Go to your controller at &lt;strong&gt;&lt;em&gt;pics_controller.rb&lt;/em&gt;&lt;/strong&gt; and add to your &lt;strong&gt;&lt;em&gt;new&lt;/em&gt;&lt;/strong&gt; &amp;amp; &lt;strong&gt;&lt;em&gt;create&lt;/em&gt;&lt;/strong&gt; method like this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def new
-  @pic = Pic.new
+&lt;/code>&lt;/pre>&lt;p>Just put the variables as it is without any quotes. And then add &lt;strong>&lt;em>.env&lt;/em>&lt;/strong> to your &lt;strong>&lt;em>.gitignore&lt;/em>&lt;/strong> so that it doesn’t get pushed to your GitHub repo. We are going to add Heroku cloudinary add-on and set the variable in the production environment in their way.&lt;/p>
+&lt;p>Alright, our configuration part is done for now. If you wanna further know about the &lt;strong>dotenv&lt;/strong> gem then go to their &lt;a href="https://github.com/bkeepers/dotenv">github page&lt;/a> and read more.&lt;/p>
+&lt;p>Finally, we are going to add code to our controller for uploading and saving images to the database.&lt;/p>
+&lt;p>Go to your controller at &lt;strong>&lt;em>pics_controller.rb&lt;/em>&lt;/strong> and add to your &lt;strong>&lt;em>new&lt;/em>&lt;/strong> &amp;amp; &lt;strong>&lt;em>create&lt;/em>&lt;/strong> method like this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>def new
+@pic = Pic.new
 end
-
 def create
-  @pic = Pic.new(params.require(:pic).permit(:image))
-  @pic.save
-  redirect_to @pic
+@pic = Pic.new(params.require(:pic).permit(:image))
+@pic.save
+redirect_to @pic
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What we are doing here is basically creating an &lt;strong&gt;instance variable&lt;/strong&gt; called &lt;strong&gt;&lt;em&gt;@pic&lt;/em&gt;&lt;/strong&gt; and adding the &lt;strong&gt;&lt;em&gt;new&lt;/em&gt;&lt;/strong&gt; method to our &lt;strong&gt;&lt;em&gt;Pic&lt;/em&gt;&lt;/strong&gt; model which we will use it in all over our project. Later, in the create method we are allowing it to add to the database, then save it and take it to that pic page after it’s been saved to our database.&lt;/p&gt;
-&lt;p&gt;Now, create a &lt;strong&gt;&lt;em&gt;new.html.erb&lt;/em&gt;&lt;/strong&gt; &amp;amp; &lt;strong&gt;&lt;em&gt;form.html.erb&lt;/em&gt;&lt;/strong&gt; in &lt;strong&gt;&lt;em&gt;app/views/pics/&lt;/em&gt;&lt;/strong&gt; directory&lt;/p&gt;
-&lt;p&gt;In your &lt;strong&gt;&lt;em&gt;form.html.erb&lt;/em&gt;&lt;/strong&gt; add this code.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;%= form_for @pic do |f| %&amp;gt;
-  &amp;lt;%= f.label :image do %&amp;gt;
-    &amp;lt;%=  f.hidden_field :image_cache %&amp;gt;
-    &amp;lt;%=  f.file_field :image %&amp;gt;
-  &amp;lt;% end %&amp;gt;
-    
-  &amp;lt;%= f.submit %&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>What we are doing here is basically creating an &lt;strong>instance variable&lt;/strong> called &lt;strong>&lt;em>@pic&lt;/em>&lt;/strong> and adding the &lt;strong>&lt;em>new&lt;/em>&lt;/strong> method to our &lt;strong>&lt;em>Pic&lt;/em>&lt;/strong> model which we will use it in all over our project. Later, in the create method we are allowing it to add to the database, then save it and take it to that pic page after it’s been saved to our database.&lt;/p>
+&lt;p>Now, create a &lt;strong>&lt;em>new.html.erb&lt;/em>&lt;/strong> &amp;amp; &lt;strong>&lt;em>form.html.erb&lt;/em>&lt;/strong> in &lt;strong>&lt;em>app/views/pics/&lt;/em>&lt;/strong> directory&lt;/p>
+&lt;p>In your &lt;strong>&lt;em>form.html.erb&lt;/em>&lt;/strong> add this code.&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;%= form_for @pic do |f| %&amp;gt;
+&amp;lt;%= f.label :image do %&amp;gt;
+&amp;lt;%= f.hidden_field :image_cache %&amp;gt;
+&amp;lt;%= f.file_field :image %&amp;gt;
 &amp;lt;% end %&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So, here we are creating a form for a pic to be added to our database and then we are going to display it in the web.&lt;/p&gt;
-&lt;p&gt;Now, we going to implement the show page and controller.&lt;/p&gt;
-&lt;p&gt;In your &lt;strong&gt;&lt;em&gt;pics_controller.rb&lt;/em&gt;&lt;/strong&gt; add this following code&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def show
-  @pic = Pic.find(params[:id])
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here we are pulling the data from database by their &lt;strong&gt;&lt;em&gt;id&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Create a new file &lt;strong&gt;&lt;em&gt;show.html.erb&lt;/em&gt;&lt;/strong&gt; in &lt;strong&gt;&lt;em&gt;app/views/pics/&lt;/em&gt;&lt;/strong&gt; directory and this simple line to display the image to the public&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;%= image_tag(@pic.image.url, width: &amp;#39;100%&amp;#39;, crop: &amp;#34;scale&amp;#34;)  %&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We are also scaling the image to fit in the display so, that it looks beautiful.&lt;/p&gt;
-&lt;p&gt;Great, your image is displayed now we are going to display all the images to our index/ home page. Open &lt;strong&gt;&lt;em&gt;pics_controller.rb&lt;/em&gt;&lt;/strong&gt; add this following code to &lt;strong&gt;&lt;em&gt;index&lt;/em&gt;&lt;/strong&gt; controller to get all the images from the database&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def index
-  @pics = Pic.all
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In your &lt;strong&gt;&lt;em&gt;index.html.erb&lt;/em&gt;&lt;/strong&gt; add this to loop through all the images and display it to the index page.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;% @pics.each do |pic| %&amp;gt;
-    &amp;lt;%=  image_tag(pic.image.url, width: &amp;#39;100%&amp;#39;, crop: &amp;#34;scale&amp;#34;)  %&amp;gt;
+&amp;lt;%= f.submit %&amp;gt;
 &amp;lt;% end %&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, we are going to prettify our app a little by adding simple bootstrap css and a navigation.&lt;/p&gt;
-&lt;p&gt;Go to &lt;a href=&#34;https://bootswatch.com/paper/bootstrap.min.css&#34;&gt;bootstrap&lt;/a&gt;, it’s a bootstrap material design flavor which I really like, you could use this or anything else you like. Grab the link add it to the &lt;strong&gt;&lt;em&gt;head&lt;/em&gt;&lt;/strong&gt; of your &lt;strong&gt;&lt;em&gt;application.html.erb&lt;/em&gt;&lt;/strong&gt; right below the csrf meta tags&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://bootswatch.com/paper/bootstrap.min.css&amp;#34;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, create a &lt;strong&gt;&lt;em&gt;partial&lt;/em&gt;&lt;/strong&gt; named &lt;strong&gt;&lt;em&gt;header.html.erb&lt;/em&gt;&lt;/strong&gt; inside the &lt;strong&gt;&lt;em&gt;app/views/layouts/&lt;/em&gt;&lt;/strong&gt; directory, and add the navigation to our header&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;nav class=&amp;#34;navbar navbar-default&amp;#34;&amp;gt;
-  &amp;lt;div class=&amp;#34;container-fluid&amp;#34;&amp;gt;
-    &amp;lt;div class=&amp;#34;navbar-header&amp;#34;&amp;gt;
-      &amp;lt;%= link_to &amp;#39;Rimgur&amp;#39;, root_path, class: &amp;#39;navbar-brand&amp;#39; %&amp;gt;
-      &amp;lt;%= link_to &amp;#39;New Post&amp;#39;, new_pic_path, class: &amp;#39;navbar-brand&amp;#39; %&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>So, here we are creating a form for a pic to be added to our database and then we are going to display it in the web.&lt;/p>
+&lt;p>Now, we going to implement the show page and controller.&lt;/p>
+&lt;p>In your &lt;strong>&lt;em>pics_controller.rb&lt;/em>&lt;/strong> add this following code&lt;/p>
+&lt;pre tabindex="0">&lt;code>def show
+@pic = Pic.find(params[:id])
+end
+&lt;/code>&lt;/pre>&lt;p>Here we are pulling the data from database by their &lt;strong>&lt;em>id&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>Create a new file &lt;strong>&lt;em>show.html.erb&lt;/em>&lt;/strong> in &lt;strong>&lt;em>app/views/pics/&lt;/em>&lt;/strong> directory and this simple line to display the image to the public&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;%= image_tag(@pic.image.url, width: &amp;#39;100%&amp;#39;, crop: &amp;#34;scale&amp;#34;) %&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>We are also scaling the image to fit in the display so, that it looks beautiful.&lt;/p>
+&lt;p>Great, your image is displayed now we are going to display all the images to our index/ home page. Open &lt;strong>&lt;em>pics_controller.rb&lt;/em>&lt;/strong> add this following code to &lt;strong>&lt;em>index&lt;/em>&lt;/strong> controller to get all the images from the database&lt;/p>
+&lt;pre tabindex="0">&lt;code>def index
+@pics = Pic.all
+end
+&lt;/code>&lt;/pre>&lt;p>In your &lt;strong>&lt;em>index.html.erb&lt;/em>&lt;/strong> add this to loop through all the images and display it to the index page.&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;% @pics.each do |pic| %&amp;gt;
+&amp;lt;%= image_tag(pic.image.url, width: &amp;#39;100%&amp;#39;, crop: &amp;#34;scale&amp;#34;) %&amp;gt;
+&amp;lt;% end %&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>Now, we are going to prettify our app a little by adding simple bootstrap css and a navigation.&lt;/p>
+&lt;p>Go to &lt;a href="https://bootswatch.com/paper/bootstrap.min.css">bootstrap&lt;/a>, it’s a bootstrap material design flavor which I really like, you could use this or anything else you like. Grab the link add it to the &lt;strong>&lt;em>head&lt;/em>&lt;/strong> of your &lt;strong>&lt;em>application.html.erb&lt;/em>&lt;/strong> right below the csrf meta tags&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://bootswatch.com/paper/bootstrap.min.css&amp;#34;&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>Now, create a &lt;strong>&lt;em>partial&lt;/em>&lt;/strong> named &lt;strong>&lt;em>header.html.erb&lt;/em>&lt;/strong> inside the &lt;strong>&lt;em>app/views/layouts/&lt;/em>&lt;/strong> directory, and add the navigation to our header&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;nav class=&amp;#34;navbar navbar-default&amp;#34;&amp;gt;
+&amp;lt;div class=&amp;#34;container-fluid&amp;#34;&amp;gt;
+&amp;lt;div class=&amp;#34;navbar-header&amp;#34;&amp;gt;
+&amp;lt;%= link_to &amp;#39;Rimgur&amp;#39;, root_path, class: &amp;#39;navbar-brand&amp;#39; %&amp;gt;
+&amp;lt;%= link_to &amp;#39;New Post&amp;#39;, new_pic_path, class: &amp;#39;navbar-brand&amp;#39; %&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 &amp;lt;/nav&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then render the header to our main application page. Add this to your &lt;strong&gt;&lt;em&gt;application.html.erb&lt;/em&gt;&lt;/strong&gt; on top &lt;strong&gt;&lt;em&gt;yield&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;%= render &amp;#39;layouts/header&amp;#39; %&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now, as a final step we are going to take our app live by deploying it to heroku.&lt;/p&gt;
-&lt;p&gt;For our application to work on production, we need to do some modification to our &lt;strong&gt;&lt;em&gt;Gemfile.&lt;/em&gt;&lt;/strong&gt; Move the &lt;strong&gt;&lt;em&gt;gem ‘sqlite’&lt;/em&gt;&lt;/strong&gt; to &lt;strong&gt;&lt;em&gt;development&lt;/em&gt;&lt;/strong&gt; group and add &lt;strong&gt;&lt;em&gt;pg&lt;/em&gt;&lt;/strong&gt; for &lt;strong&gt;&lt;em&gt;PostgreSQL&lt;/em&gt;&lt;/strong&gt; for &lt;strong&gt;&lt;em&gt;production.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;group :development do
-  gem &amp;#39;sqlite3&amp;#39;
+&lt;/code>&lt;/pre>&lt;p>And then render the header to our main application page. Add this to your &lt;strong>&lt;em>application.html.erb&lt;/em>&lt;/strong> on top &lt;strong>&lt;em>yield&lt;/em>&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>&amp;lt;%= render &amp;#39;layouts/header&amp;#39; %&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>Now, as a final step we are going to take our app live by deploying it to heroku.&lt;/p>
+&lt;p>For our application to work on production, we need to do some modification to our &lt;strong>&lt;em>Gemfile.&lt;/em>&lt;/strong> Move the &lt;strong>&lt;em>gem ‘sqlite’&lt;/em>&lt;/strong> to &lt;strong>&lt;em>development&lt;/em>&lt;/strong> group and add &lt;strong>&lt;em>pg&lt;/em>&lt;/strong> for &lt;strong>&lt;em>PostgreSQL&lt;/em>&lt;/strong> for &lt;strong>&lt;em>production.&lt;/em>&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>group :development do
+gem &amp;#39;sqlite3&amp;#39;
 end
-
 group :production do
-  gem &amp;#39;pg&amp;#39;
+gem &amp;#39;pg&amp;#39;
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then do this following to install the gems&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;bundle&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;gem install bundler&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Git add and commit all of your files.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git add .; git commit -m ‘project finished’&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Create a new git repo in your account and our codebase to it. Follow the instructions on the screen to do &lt;strong&gt;&lt;em&gt;git remote add and push&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Now, we are ready to take it live. Create a new &lt;a href=&#34;https://www.heroku.com/&#34;&gt;heroku&lt;/a&gt; account for FREE and verify it. Then, create a new heroku app in your terminal and push it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;heroku create&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git push heroku master&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are going to have migrate our schema to production for our app to work. We can do it like this.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;heroku run rails db:migrate&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Do &lt;strong&gt;&lt;em&gt;heroku open&lt;/em&gt;&lt;/strong&gt; to open the app in browser.&lt;/p&gt;
-&lt;p&gt;Okay, now you are going to do the most important step for our image uploading to work.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;heroku addons:create cloudinary:starter&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Remember, we set up the environment variables for &lt;a href=&#34;https://hackernoon.com/tagged/cloudinary&#34;&gt;cloudinary&lt;/a&gt; for &lt;a href=&#34;https://hackernoon.com/tagged/development&#34;&gt;development&lt;/a&gt; machine, now we are going to do it for our production.&lt;/p&gt;
-&lt;p&gt;Go to your heroku dashboard, then to your app, and then to the cloudinary dashboard to get our configurations.&lt;/p&gt;
-&lt;p&gt;Now, in your terminal do this following to add the config variables.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;heroku config:set CLOUDINARY_CLOUD_NAME=&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;heroku config:set CLOUDINARY_API_KEY=&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;heroku config:set CLOUDINARY_API_SECRET=&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Try uploading a pic in your app and then check the cloudinary dashboard that it’s been added.&lt;/p&gt;
-&lt;p&gt;Congratulations, you have successfully built a fully functional web app. Feel free to play around with it and make it more awesome.&lt;/p&gt;
-&lt;p&gt;Here is the link to my github &lt;a href=&#34;https://github.com/priom/rimgur&#34;&gt;repo&lt;/a&gt;. All the code is hosted here for your reference.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Thank you for reading it, hope you enjoyed it and will use this knowledge to build something awesome.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;LIKE &amp;amp; SHARE if you have liked my post. Please comment below any feedbacks, suggestions or requests. Also please visit my &lt;a href=&#34;http://priom.dev&#34;&gt;website&lt;/a&gt;. Subscribe me if you would like to receive future posts to your inbox.&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Rails 5 Imgur Clone Tutorial…Part 1</title>
-      <link>/blog/rails-5-imgur-clone-tutorial-part-1/</link>
-      <pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/rails-5-imgur-clone-tutorial-part-1/</guid>
-      <description>Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
-Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg&#34; alt=&#34;Rails 5 Imgur Clone&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Handle image upload and &lt;a href=&#34;https://hackernoon.com/tagged/management&#34;&gt;management&lt;/a&gt; painlessly with Carrierwave and Cloudinary and deploy on &lt;a href=&#34;https://hackernoon.com/tagged/heroku&#34;&gt;Heroku&lt;/a&gt; and share your photos fast with the world.&lt;/p&gt;
-&lt;p&gt;Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.&lt;/p&gt;
-&lt;p&gt;It is going to be a 2 part series explaining every bits and pieces. This tutorial is going to very beginner friendly and also suitable to intermediate to advanced users.&lt;/p&gt;
-&lt;h3 id=&#34;now-lets-start-some-coding-shall-we&#34;&gt;Now, let’s start some coding, shall we?&lt;/h3&gt;
-&lt;p&gt;First, let’s create a new rails project in your terminal by doing:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;rails new rimgur&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It’s always good practice to start using Git right away so, we are going to follow the same practice here:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git init&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git add .&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git commit -m ‘project init’&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Let’s test our app in the browser by using this command to boot up our server.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;rails server&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;And then go to &lt;em&gt;localhost:3000 in your browser. You will see this.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/1112/1*5rXDFCXMNuJqPakpckB5-g.png&#34; alt=&#34;Rails default home&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Great, your app is running successfully. Open the project in your favorite IDE or text editor.&lt;/p&gt;
-&lt;p&gt;Now we are going to create a controller.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rails generate controller pics
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Open file &lt;strong&gt;&lt;em&gt;pics_controller.rb&lt;/em&gt;&lt;/strong&gt; and an action &lt;strong&gt;&lt;em&gt;index&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class PicsController &amp;lt; ApplicationController
-    def index
-    end
+&lt;/code>&lt;/pre>&lt;p>Then do this following to install the gems&lt;/p>
+&lt;blockquote>
+&lt;p>bundle&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>gem install bundler&lt;/p>
+&lt;/blockquote>
+&lt;p>Git add and commit all of your files.&lt;/p>
+&lt;blockquote>
+&lt;p>git add .; git commit -m ‘project finished’&lt;/p>
+&lt;/blockquote>
+&lt;p>Create a new git repo in your account and our codebase to it. Follow the instructions on the screen to do &lt;strong>&lt;em>git remote add and push&lt;/em>&lt;/strong>.&lt;/p>
+&lt;p>Now, we are ready to take it live. Create a new &lt;a href="https://www.heroku.com/">heroku&lt;/a> account for FREE and verify it. Then, create a new heroku app in your terminal and push it.&lt;/p>
+&lt;blockquote>
+&lt;p>heroku create&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>git push heroku master&lt;/p>
+&lt;/blockquote>
+&lt;p>We are going to have migrate our schema to production for our app to work. We can do it like this.&lt;/p>
+&lt;blockquote>
+&lt;p>heroku run rails db:migrate&lt;/p>
+&lt;/blockquote>
+&lt;p>Do &lt;strong>&lt;em>heroku open&lt;/em>&lt;/strong> to open the app in browser.&lt;/p>
+&lt;p>Okay, now you are going to do the most important step for our image uploading to work.&lt;/p>
+&lt;blockquote>
+&lt;p>heroku addons:create cloudinary:starter&lt;/p>
+&lt;/blockquote>
+&lt;p>Remember, we set up the environment variables for &lt;a href="https://hackernoon.com/tagged/cloudinary">cloudinary&lt;/a> for &lt;a href="https://hackernoon.com/tagged/development">development&lt;/a> machine, now we are going to do it for our production.&lt;/p>
+&lt;p>Go to your heroku dashboard, then to your app, and then to the cloudinary dashboard to get our configurations.&lt;/p>
+&lt;p>Now, in your terminal do this following to add the config variables.&lt;/p>
+&lt;blockquote>
+&lt;p>heroku config:set CLOUDINARY_CLOUD_NAME=&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>heroku config:set CLOUDINARY_API_KEY=&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>heroku config:set CLOUDINARY_API_SECRET=&lt;/p>
+&lt;/blockquote>
+&lt;p>Try uploading a pic in your app and then check the cloudinary dashboard that it’s been added.&lt;/p>
+&lt;p>Congratulations, you have successfully built a fully functional web app. Feel free to play around with it and make it more awesome.&lt;/p>
+&lt;p>Here is the link to my github &lt;a href="https://github.com/priom/rimgur">repo&lt;/a>. All the code is hosted here for your reference.&lt;/p>
+&lt;blockquote>
+&lt;p>Thank you for reading it, hope you enjoyed it and will use this knowledge to build something awesome.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>LIKE &amp;amp; SHARE if you have liked my post. Please comment below any feedbacks, suggestions or requests. Also please visit my &lt;a href="http://priom.dev">website&lt;/a>. Subscribe me if you would like to receive future posts to your inbox.&lt;/p>
+&lt;/blockquote></content></item><item><title>Rails 5 Imgur Clone Tutorial…Part 1</title><link>/blog/rails-5-imgur-clone-tutorial-part-1/</link><pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate><guid>/blog/rails-5-imgur-clone-tutorial-part-1/</guid><description>Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
+Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more.</description><content>&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg" alt="Rails 5 Imgur Clone">&lt;/p>
+&lt;p>Handle image upload and &lt;a href="https://hackernoon.com/tagged/management">management&lt;/a> painlessly with Carrierwave and Cloudinary and deploy on &lt;a href="https://hackernoon.com/tagged/heroku">Heroku&lt;/a> and share your photos fast with the world.&lt;/p>
+&lt;p>Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.&lt;/p>
+&lt;p>It is going to be a 2 part series explaining every bits and pieces. This tutorial is going to very beginner friendly and also suitable to intermediate to advanced users.&lt;/p>
+&lt;h3 id="now-lets-start-some-coding-shall-we">Now, let’s start some coding, shall we?&lt;/h3>
+&lt;p>First, let’s create a new rails project in your terminal by doing:&lt;/p>
+&lt;blockquote>
+&lt;p>rails new rimgur&lt;/p>
+&lt;/blockquote>
+&lt;p>It’s always good practice to start using Git right away so, we are going to follow the same practice here:&lt;/p>
+&lt;blockquote>
+&lt;p>git init&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>git add .&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>git commit -m ‘project init’&lt;/p>
+&lt;/blockquote>
+&lt;p>Let’s test our app in the browser by using this command to boot up our server.&lt;/p>
+&lt;blockquote>
+&lt;p>rails server&lt;/p>
+&lt;/blockquote>
+&lt;p>And then go to &lt;em>localhost:3000 in your browser. You will see this.&lt;/em>&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/1112/1*5rXDFCXMNuJqPakpckB5-g.png" alt="Rails default home">&lt;/p>
+&lt;p>Great, your app is running successfully. Open the project in your favorite IDE or text editor.&lt;/p>
+&lt;p>Now we are going to create a controller.&lt;/p>
+&lt;pre tabindex="0">&lt;code>rails generate controller pics
+&lt;/code>&lt;/pre>&lt;p>Open file &lt;strong>&lt;em>pics_controller.rb&lt;/em>&lt;/strong> and an action &lt;strong>&lt;em>index&lt;/em>&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>class PicsController &amp;lt; ApplicationController
+def index
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Create a view file for our index action in &lt;strong&gt;&lt;em&gt;app/views/pics/index.html.erb&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Open &lt;strong&gt;index.html.erb&lt;/strong&gt; and write some dummy text like &lt;em&gt;“Hello”&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Now, we are going to create a route to display the page.&lt;/p&gt;
-&lt;p&gt;Go to &lt;strong&gt;&lt;em&gt;config/routes.rb&lt;/em&gt;&lt;/strong&gt; and write this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Rails.application.routes.draw do
-    root &amp;#39;pics#index&amp;#39;
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Okay, this line simply means you are setting &lt;em&gt;root&lt;/em&gt; path to &lt;em&gt;pic&lt;/em&gt; controller and &lt;em&gt;index&lt;/em&gt; action.&lt;/p&gt;
-&lt;p&gt;And you should &lt;em&gt;“Hello”&lt;/em&gt; or whatever you wrote.&lt;/p&gt;
-&lt;p&gt;Now, we are going to create our model like this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rails generate model Pic
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Awesome, now we have some routes and model setup and now we can start integrating our image handling system.&lt;/p&gt;
-&lt;p&gt;First, open your &lt;strong&gt;&lt;em&gt;Gemfile&lt;/em&gt;&lt;/strong&gt; and then put these right anywhere in middle.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gem &amp;#39;carrierwave&amp;#39;
+&lt;/code>&lt;/pre>&lt;p>Create a view file for our index action in &lt;strong>&lt;em>app/views/pics/index.html.erb&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>Open &lt;strong>index.html.erb&lt;/strong> and write some dummy text like &lt;em>“Hello”&lt;/em>&lt;/p>
+&lt;p>Now, we are going to create a route to display the page.&lt;/p>
+&lt;p>Go to &lt;strong>&lt;em>config/routes.rb&lt;/em>&lt;/strong> and write this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Rails.application.routes.draw do
+root &amp;#39;pics#index&amp;#39;
+end
+&lt;/code>&lt;/pre>&lt;p>Okay, this line simply means you are setting &lt;em>root&lt;/em> path to &lt;em>pic&lt;/em> controller and &lt;em>index&lt;/em> action.&lt;/p>
+&lt;p>And you should &lt;em>“Hello”&lt;/em> or whatever you wrote.&lt;/p>
+&lt;p>Now, we are going to create our model like this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>rails generate model Pic
+&lt;/code>&lt;/pre>&lt;p>Awesome, now we have some routes and model setup and now we can start integrating our image handling system.&lt;/p>
+&lt;p>First, open your &lt;strong>&lt;em>Gemfile&lt;/em>&lt;/strong> and then put these right anywhere in middle.&lt;/p>
+&lt;pre tabindex="0">&lt;code>gem &amp;#39;carrierwave&amp;#39;
 gem &amp;#39;cloudinary&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Second, run &lt;strong&gt;&lt;em&gt;bundle&lt;/em&gt;&lt;/strong&gt; in your terminal to install the gems and then restart your server.&lt;/p&gt;
-&lt;p&gt;Third, we will generate our image uploader like this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rails generate uploader Image
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Go to &lt;strong&gt;&lt;em&gt;app/uploaders/image_uploader.rb&lt;/em&gt;&lt;/strong&gt; and add this inside our class.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;include Cloudinary::CarrierWave
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;And comment out everything else in the file. IMPORTANT!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Now, create a new file in the &lt;strong&gt;&lt;em&gt;config/initializers&lt;/em&gt;&lt;/strong&gt; directory name &lt;strong&gt;&lt;em&gt;cloudinary.rb&lt;/em&gt;&lt;/strong&gt; and then add this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Cloudinary.config do |config|
-    config.cloud_name = ENV[&amp;#39;CLOUDINARY_CLOUD_NAME&amp;#39;]
-    config.api_key = ENV[&amp;#39;CLOUDINARY_API_KEY&amp;#39;]
-    config.api_secret = ENV[&amp;#39;CLOUDINARY_API_SECRET&amp;#39;]
+&lt;/code>&lt;/pre>&lt;p>Second, run &lt;strong>&lt;em>bundle&lt;/em>&lt;/strong> in your terminal to install the gems and then restart your server.&lt;/p>
+&lt;p>Third, we will generate our image uploader like this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>rails generate uploader Image
+&lt;/code>&lt;/pre>&lt;p>Go to &lt;strong>&lt;em>app/uploaders/image_uploader.rb&lt;/em>&lt;/strong> and add this inside our class.&lt;/p>
+&lt;pre tabindex="0">&lt;code>include Cloudinary::CarrierWave
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>And comment out everything else in the file. IMPORTANT!&lt;/strong>&lt;/p>
+&lt;p>Now, create a new file in the &lt;strong>&lt;em>config/initializers&lt;/em>&lt;/strong> directory name &lt;strong>&lt;em>cloudinary.rb&lt;/em>&lt;/strong> and then add this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Cloudinary.config do |config|
+config.cloud_name = ENV[&amp;#39;CLOUDINARY_CLOUD_NAME&amp;#39;]
+config.api_key = ENV[&amp;#39;CLOUDINARY_API_KEY&amp;#39;]
+config.api_secret = ENV[&amp;#39;CLOUDINARY_API_SECRET&amp;#39;]
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Okay, let me explain this. We are adding all the configuration variables dynamically and securely. I’ll explain later more in details.&lt;/p&gt;
-&lt;p&gt;Open &lt;strong&gt;&lt;em&gt;app/models/pic.rb&lt;/em&gt;&lt;/strong&gt; and then put this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class Pic &amp;lt; ApplicationRecord
-    mount_uploader :image, ImageUploader
+&lt;/code>&lt;/pre>&lt;p>Okay, let me explain this. We are adding all the configuration variables dynamically and securely. I’ll explain later more in details.&lt;/p>
+&lt;p>Open &lt;strong>&lt;em>app/models/pic.rb&lt;/em>&lt;/strong> and then put this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>class Pic &amp;lt; ApplicationRecord
+mount_uploader :image, ImageUploader
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then run &lt;code&gt;rails db:migrate&lt;/code&gt; to add our schema. Your &lt;strong&gt;&lt;em&gt;db/schema.rb&lt;/em&gt;&lt;/strong&gt; should have something like this:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;create_table &amp;#34;pics&amp;#34;, force: :cascade do |t|
-  t.datetime &amp;#34;created_at&amp;#34;, null: false
-  t.datetime &amp;#34;updated_at&amp;#34;, null: false
+&lt;/code>&lt;/pre>&lt;p>And then run &lt;code>rails db:migrate&lt;/code> to add our schema. Your &lt;strong>&lt;em>db/schema.rb&lt;/em>&lt;/strong> should have something like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>create_table &amp;#34;pics&amp;#34;, force: :cascade do |t|
+t.datetime &amp;#34;created_at&amp;#34;, null: false
+t.datetime &amp;#34;updated_at&amp;#34;, null: false
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we’’ll generate a migration to add our image uploader to &lt;strong&gt;&lt;em&gt;pic model&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rails generate migration add_image_to_pic
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Open your &lt;strong&gt;&lt;em&gt;add_image_to_pic.rb&lt;/em&gt;&lt;/strong&gt; and add this.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class AddImageToPic &amp;lt; ActiveRecord::Migration[5.0]
-    def change
-        add_column :pics, :image, :string
-    end
+&lt;/code>&lt;/pre>&lt;p>Now we’’ll generate a migration to add our image uploader to &lt;strong>&lt;em>pic model&lt;/em>&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>rails generate migration add_image_to_pic
+&lt;/code>&lt;/pre>&lt;p>Open your &lt;strong>&lt;em>add_image_to_pic.rb&lt;/em>&lt;/strong> and add this.&lt;/p>
+&lt;pre tabindex="0">&lt;code>class AddImageToPic &amp;lt; ActiveRecord::Migration[5.0]
+def change
+add_column :pics, :image, :string
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then run &lt;code&gt;rails db:migrate&lt;/code&gt; to add it to our schema.&lt;/p&gt;
-&lt;p&gt;Great, our database part is done and now we going to add CRUD functionalities to our app.&lt;/p&gt;
-&lt;p&gt;Open your &lt;strong&gt;&lt;em&gt;routes.rb&lt;/em&gt;&lt;/strong&gt; file like this&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;resources :pics
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Let’s check our routes by doing &lt;strong&gt;&lt;em&gt;rails routes&lt;/em&gt;&lt;/strong&gt; in your terminal. And you should all the actions routes.&lt;/p&gt;
-&lt;p&gt;Create all the action methods like this in your &lt;strong&gt;&lt;em&gt;pics_controller.rb&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class PicsController &amp;lt; ApplicationController
-  def index
-  end
-
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;Thanks, everyone for reading it so far, hope you enjoyed it. In the next part, we will finish our application and also take it live. See you, in the next one.&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;p>And then run &lt;code>rails db:migrate&lt;/code> to add it to our schema.&lt;/p>
+&lt;p>Great, our database part is done and now we going to add CRUD functionalities to our app.&lt;/p>
+&lt;p>Open your &lt;strong>&lt;em>routes.rb&lt;/em>&lt;/strong> file like this&lt;/p>
+&lt;pre tabindex="0">&lt;code>resources :pics
+&lt;/code>&lt;/pre>&lt;p>Let’s check our routes by doing &lt;strong>&lt;em>rails routes&lt;/em>&lt;/strong> in your terminal. And you should all the actions routes.&lt;/p>
+&lt;p>Create all the action methods like this in your &lt;strong>&lt;em>pics_controller.rb&lt;/em>&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>class PicsController &amp;lt; ApplicationController
+def index
+end
+def new
+end
+def create
+end
+def edit
+end
+def show
+end
+def update
+end
+def destroy
+end
+end
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>Thanks, everyone for reading it so far, hope you enjoyed it. In the next part, we will finish our application and also take it live. See you, in the next one.&lt;/p>
+&lt;/blockquote></content></item></channel></rss>
