@@ -57,17 +57,13 @@ googleAnalytics = "G-Y6X6QFNNHQ"
         name = "About"
         url = "/"
       [[languages.en.menu.main]]
-        identifier = "blog"
-        name = "Blog"
-        url = "/blog"
-      [[languages.en.menu.main]]
         identifier = "github"
         name = "GitHub"
         url = "https://github.com/priom"
       [[languages.en.menu.main]]
-        identifier = "twitter"
-        name = "Twitter"
-        url = "https://twitter.com/0xPriom"
+        identifier = "X"
+        name = "X"
+        url = "https://x.com/0xPriom"
       [[languages.en.menu.main]]
         identifier = "linkedin"
         name = "LinkedIn"
