@@ -72,3 +72,7 @@ googleAnalytics = "G-Y6X6QFNNHQ"
         identifier = "linkedin"
         name = "LinkedIn"
         url = "https://linkedin.com/in/0xPriom"
+      [[languages.en.menu.main]]
+        identifier = "Farcaster"
+        name = "Farcaster"
+        url = "https://warpcast.com/priom"
