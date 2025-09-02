@@ -1,40 +1,270 @@
-<!doctype html><html lang=en><head><title>Rails 5 Imgur Clone Tutorial…Part 1 :: Priom Chowdhury</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
-Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more."><meta name=keywords content="priom,chainsafe,blockchain,devops,developer,web3,ipfs,filecoin,ethereum,toronto,canada"><meta name=robots content="noodp"><link rel=canonical href=../../blog/rails-5-imgur-clone-tutorial-part-1/><script async src="https://www.googletagmanager.com/gtag/js?id=G-Y6X6QFNNHQ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-Y6X6QFNNHQ",{anonymize_ip:!1})}</script><link rel=stylesheet href=../../assets/style.css><link rel=stylesheet href=../../assets/green.css><link rel=apple-touch-icon href=../../img/apple-touch-icon-192x192.png><link rel="shortcut icon" href=../../favicon.ico><meta name=twitter:card content="summary"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="Rails 5 Imgur Clone Tutorial…Part 1"><meta property="og:description" content="Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
-Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more."><meta property="og:url" content="/blog/rails-5-imgur-clone-tutorial-part-1/"><meta property="og:site_name" content="Priom Chowdhury"><meta property="og:image" content="/favicon.ico"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><meta property="article:published_time" content="2017-05-04 00:00:00 +0000 UTC"></head><body class=green><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=../../><div class=logo>PRIOM</div></a></div><div class=menu-trigger>menu</div></div><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=../../>About</a></li><li><a href=../../blog>Blog</a></li><li><a href=https://github.com/priom>GitHub</a></li><li><a href=https://linkedin.com/in/priomchowdhury>LinkedIn</a></li><li><a href=https://twitter.com/pri0m>Twitter</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=../../>About</a></li><li><a href=../../blog>Blog</a></li><li><a href=https://github.com/priom>GitHub</a></li><li><a href=https://linkedin.com/in/priomchowdhury>LinkedIn</a></li><li><a href=https://twitter.com/pri0m>Twitter</a></li></ul></nav></header><div class=content><div class=post><h1 class=post-title><a href=../../blog/rails-5-imgur-clone-tutorial-part-1/>Rails 5 Imgur Clone Tutorial…Part 1</a></h1><div class=post-meta><span class=post-date>2017-05-04</span>
-<span class=post-author>:: Priom</span></div><div class=post-content><div><p><img src=https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg alt="Rails 5 Imgur Clone"></p><p>Handle image upload and <a href=https://hackernoon.com/tagged/management>management</a> painlessly with Carrierwave and Cloudinary and deploy on <a href=https://hackernoon.com/tagged/heroku>Heroku</a> and share your photos fast with the world.</p><p>Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.</p><p>It is going to be a 2 part series explaining every bits and pieces. This tutorial is going to very beginner friendly and also suitable to intermediate to advanced users.</p><h3 id=now-lets-start-some-coding-shall-we>Now, let’s start some coding, shall we?<a href=#now-lets-start-some-coding-shall-we class=hanchor arialabel=Anchor>&#8983;</a></h3><p>First, let’s create a new rails project in your terminal by doing:</p><blockquote><p>rails new rimgur</p></blockquote><p>It’s always good practice to start using Git right away so, we are going to follow the same practice here:</p><blockquote><p>git init</p></blockquote><blockquote><p>git add .</p></blockquote><blockquote><p>git commit -m ‘project init’</p></blockquote><p>Let’s test our app in the browser by using this command to boot up our server.</p><blockquote><p>rails server</p></blockquote><p>And then go to <em>localhost:3000 in your browser. You will see this.</em></p><p><img src=https://cdn-images-1.medium.com/max/1112/1*5rXDFCXMNuJqPakpckB5-g.png alt="Rails default home"></p><p>Great, your app is running successfully. Open the project in your favorite IDE or text editor.</p><p>Now we are going to create a controller.</p><pre tabindex=0><code>rails generate controller pics
-</code></pre><p>Open file <strong><em>pics_controller.rb</em></strong> and an action <strong><em>index</em></strong></p><pre tabindex=0><code>class PicsController &lt; ApplicationController
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Rails 5 Imgur Clone Tutorial…Part 1 :: Priom Chowdhury</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
+Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="//localhost:1313/blog/rails-5-imgur-clone-tutorial-part-1/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y6X6QFNNHQ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Y6X6QFNNHQ');
+        }
+      </script>
+
+
+<link rel="stylesheet" href="//localhost:1313/assets/style.css">
+
+  <link rel="stylesheet" href="//localhost:1313/assets/default.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="//localhost:1313/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="//localhost:1313/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Rails 5 Imgur Clone Tutorial…Part 1">
+<meta property="og:description" content="
+Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
+Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.
+" />
+<meta property="og:url" content="//localhost:1313/blog/rails-5-imgur-clone-tutorial-part-1/" />
+<meta property="og:site_name" content="Priom Chowdhury" />
+
+  
+    <meta property="og:image" content="//localhost:1313/favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2017-05-04 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="default">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="../../">
+  <div class="logo">
+    PRIOM
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="../../">About</a></li>
+        
+      
+        
+          <li><a href="https://farcaster.xyz/priom">Farcaster</a></li>
+        
+      
+        
+          <li><a href="https://github.com/priom">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/0xPriom">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://x.com/0xPriom">X</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="../../">About</a></li>
+      
+    
+      
+        <li><a href="https://farcaster.xyz/priom">Farcaster</a></li>
+      
+    
+      
+        <li><a href="https://github.com/priom">GitHub</a></li>
+      
+    
+      
+        <li><a href="https://linkedin.com/in/0xPriom">LinkedIn</a></li>
+      
+    
+      
+        <li><a href="https://x.com/0xPriom">X</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/blog/rails-5-imgur-clone-tutorial-part-1/">Rails 5 Imgur Clone Tutorial…Part 1</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2017-05-04 
+      </span>
+    
+    
+    <span class="post-author">:: Priom</span>
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg" alt="Rails 5 Imgur Clone"></p>
+<p>Handle image upload and <a href="https://hackernoon.com/tagged/management">management</a> painlessly with Carrierwave and Cloudinary and deploy on <a href="https://hackernoon.com/tagged/heroku">Heroku</a> and share your photos fast with the world.</p>
+<p>Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.</p>
+<p>It is going to be a 2 part series explaining every bits and pieces. This tutorial is going to very beginner friendly and also suitable to intermediate to advanced users.</p>
+<h3 id="now-lets-start-some-coding-shall-we">Now, let’s start some coding, shall we?<a href="#now-lets-start-some-coding-shall-we" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>First, let’s create a new rails project in your terminal by doing:</p>
+<blockquote>
+<p>rails new rimgur</p></blockquote>
+<p>It’s always good practice to start using Git right away so, we are going to follow the same practice here:</p>
+<blockquote>
+<p>git init</p></blockquote>
+<blockquote>
+<p>git add .</p></blockquote>
+<blockquote>
+<p>git commit -m ‘project init’</p></blockquote>
+<p>Let’s test our app in the browser by using this command to boot up our server.</p>
+<blockquote>
+<p>rails server</p></blockquote>
+<p>And then go to <em>localhost:3000 in your browser. You will see this.</em></p>
+<p><img src="https://cdn-images-1.medium.com/max/1112/1*5rXDFCXMNuJqPakpckB5-g.png" alt="Rails default home"></p>
+<p>Great, your app is running successfully. Open the project in your favorite IDE or text editor.</p>
+<p>Now we are going to create a controller.</p>
+<pre tabindex="0"><code>rails generate controller pics
+</code></pre><p>Open file <strong><em>pics_controller.rb</em></strong> and an action <strong><em>index</em></strong></p>
+<pre tabindex="0"><code>class PicsController &lt; ApplicationController
     def index
     end
 end
-</code></pre><p>Create a view file for our index action in <strong><em>app/views/pics/index.html.erb</em></strong></p><p>Open <strong>index.html.erb</strong> and write some dummy text like <em>“Hello”</em></p><p>Now, we are going to create a route to display the page.</p><p>Go to <strong><em>config/routes.rb</em></strong> and write this.</p><pre tabindex=0><code>Rails.application.routes.draw do
+</code></pre><p>Create a view file for our index action in <strong><em>app/views/pics/index.html.erb</em></strong></p>
+<p>Open <strong>index.html.erb</strong> and write some dummy text like <em>“Hello”</em></p>
+<p>Now, we are going to create a route to display the page.</p>
+<p>Go to <strong><em>config/routes.rb</em></strong> and write this.</p>
+<pre tabindex="0"><code>Rails.application.routes.draw do
     root &#39;pics#index&#39;
 end
-</code></pre><p>Okay, this line simply means you are setting <em>root</em> path to <em>pic</em> controller and <em>index</em> action.</p><p>And you should <em>“Hello”</em> or whatever you wrote.</p><p>Now, we are going to create our model like this.</p><pre tabindex=0><code>rails generate model Pic
-</code></pre><p>Awesome, now we have some routes and model setup and now we can start integrating our image handling system.</p><p>First, open your <strong><em>Gemfile</em></strong> and then put these right anywhere in middle.</p><pre tabindex=0><code>gem &#39;carrierwave&#39;
+</code></pre><p>Okay, this line simply means you are setting <em>root</em> path to <em>pic</em> controller and <em>index</em> action.</p>
+<p>And you should <em>“Hello”</em> or whatever you wrote.</p>
+<p>Now, we are going to create our model like this.</p>
+<pre tabindex="0"><code>rails generate model Pic
+</code></pre><p>Awesome, now we have some routes and model setup and now we can start integrating our image handling system.</p>
+<p>First, open your <strong><em>Gemfile</em></strong> and then put these right anywhere in middle.</p>
+<pre tabindex="0"><code>gem &#39;carrierwave&#39;
 gem &#39;cloudinary&#39;
-</code></pre><p>Second, run <strong><em>bundle</em></strong> in your terminal to install the gems and then restart your server.</p><p>Third, we will generate our image uploader like this.</p><pre tabindex=0><code>rails generate uploader Image
-</code></pre><p>Go to <strong><em>app/uploaders/image_uploader.rb</em></strong> and add this inside our class.</p><pre tabindex=0><code>include Cloudinary::CarrierWave
-</code></pre><p><strong>And comment out everything else in the file. IMPORTANT!</strong></p><p>Now, create a new file in the <strong><em>config/initializers</em></strong> directory name <strong><em>cloudinary.rb</em></strong> and then add this.</p><pre tabindex=0><code>Cloudinary.config do |config|
+</code></pre><p>Second, run <strong><em>bundle</em></strong> in your terminal to install the gems and then restart your server.</p>
+<p>Third, we will generate our image uploader like this.</p>
+<pre tabindex="0"><code>rails generate uploader Image
+</code></pre><p>Go to <strong><em>app/uploaders/image_uploader.rb</em></strong> and add this inside our class.</p>
+<pre tabindex="0"><code>include Cloudinary::CarrierWave
+</code></pre><p><strong>And comment out everything else in the file. IMPORTANT!</strong></p>
+<p>Now, create a new file in the <strong><em>config/initializers</em></strong> directory name <strong><em>cloudinary.rb</em></strong> and then add this.</p>
+<pre tabindex="0"><code>Cloudinary.config do |config|
     config.cloud_name = ENV[&#39;CLOUDINARY_CLOUD_NAME&#39;]
     config.api_key = ENV[&#39;CLOUDINARY_API_KEY&#39;]
     config.api_secret = ENV[&#39;CLOUDINARY_API_SECRET&#39;]
 end
-</code></pre><p>Okay, let me explain this. We are adding all the configuration variables dynamically and securely. I’ll explain later more in details.</p><p>Open <strong><em>app/models/pic.rb</em></strong> and then put this.</p><pre tabindex=0><code>class Pic &lt; ApplicationRecord
+</code></pre><p>Okay, let me explain this. We are adding all the configuration variables dynamically and securely. I’ll explain later more in details.</p>
+<p>Open <strong><em>app/models/pic.rb</em></strong> and then put this.</p>
+<pre tabindex="0"><code>class Pic &lt; ApplicationRecord
     mount_uploader :image, ImageUploader
 end
-</code></pre><p>And then run <code>rails db:migrate</code> to add our schema. Your <strong><em>db/schema.rb</em></strong> should have something like this:</p><pre tabindex=0><code>create_table &#34;pics&#34;, force: :cascade do |t|
+</code></pre><p>And then run <code>rails db:migrate</code> to add our schema. Your <strong><em>db/schema.rb</em></strong> should have something like this:</p>
+<pre tabindex="0"><code>create_table &#34;pics&#34;, force: :cascade do |t|
   t.datetime &#34;created_at&#34;, null: false
   t.datetime &#34;updated_at&#34;, null: false
 end
-</code></pre><p>Now we’’ll generate a migration to add our image uploader to <strong><em>pic model</em></strong></p><pre tabindex=0><code>rails generate migration add_image_to_pic
-</code></pre><p>Open your <strong><em>add_image_to_pic.rb</em></strong> and add this.</p><pre tabindex=0><code>class AddImageToPic &lt; ActiveRecord::Migration[5.0]
+</code></pre><p>Now we’’ll generate a migration to add our image uploader to <strong><em>pic model</em></strong></p>
+<pre tabindex="0"><code>rails generate migration add_image_to_pic
+</code></pre><p>Open your <strong><em>add_image_to_pic.rb</em></strong> and add this.</p>
+<pre tabindex="0"><code>class AddImageToPic &lt; ActiveRecord::Migration[5.0]
     def change
         add_column :pics, :image, :string
     end
 end
-</code></pre><p>And then run <code>rails db:migrate</code> to add it to our schema.</p><p>Great, our database part is done and now we going to add CRUD functionalities to our app.</p><p>Open your <strong><em>routes.rb</em></strong> file like this</p><pre tabindex=0><code>resources :pics
-</code></pre><p>Let’s check our routes by doing <strong><em>rails routes</em></strong> in your terminal. And you should all the actions routes.</p><p>Create all the action methods like this in your <strong><em>pics_controller.rb</em></strong></p><pre tabindex=0><code>class PicsController &lt; ApplicationController
+</code></pre><p>And then run <code>rails db:migrate</code> to add it to our schema.</p>
+<p>Great, our database part is done and now we going to add CRUD functionalities to our app.</p>
+<p>Open your <strong><em>routes.rb</em></strong> file like this</p>
+<pre tabindex="0"><code>resources :pics
+</code></pre><p>Let’s check our routes by doing <strong><em>rails routes</em></strong> in your terminal. And you should all the actions routes.</p>
+<p>Create all the action methods like this in your <strong><em>pics_controller.rb</em></strong></p>
+<pre tabindex="0"><code>class PicsController &lt; ApplicationController
   def index
   end
 
@@ -56,5 +286,39 @@ end
   def destroy
   end
 end
-</code></pre><blockquote><p>Thanks, everyone for reading it so far, hope you enjoyed it. In the next part, we will finish our application and also take it live. See you, in the next one.</p></blockquote></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user"><span>&copy; 2023 All Rights Reserved by Priom</span></div></div></footer><script src=../../assets/main.js></script>
-<script src=../../assets/prism.js></script></div></body></html>
+</code></pre><blockquote>
+<p>Thanks, everyone for reading it so far, hope you enjoyed it. In the next part, we will finish our application and also take it live. See you, in the next one.</p></blockquote>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+      
+        <div class="copyright copyright--user">
+          <span> &copy; 2025 All Rights Reserved by Priom</span>
+      
+        </div>
+    </div>
+  </footer>
+  
+  <script src="//localhost:1313/assets/main.js"></script>
+  <script src="//localhost:1313/assets/prism.js"></script>
+  
+  
+  
+
+  
+  
+</div>
+
+</body>
+</html>

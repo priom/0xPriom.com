@@ -1,10 +1,307 @@
-<!doctype html><html lang=en><head><title>Blogs :: Priom Chowdhury</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content="priom,chainsafe,blockchain,devops,developer,web3,ipfs,filecoin,ethereum,toronto,canada"><meta name=robots content="noodp"><link rel=canonical href=../blog/><script async src="https://www.googletagmanager.com/gtag/js?id=G-Y6X6QFNNHQ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-Y6X6QFNNHQ",{anonymize_ip:!1})}</script><link rel=stylesheet href=../assets/style.css><link rel=stylesheet href=../assets/green.css><link rel=apple-touch-icon href=../img/apple-touch-icon-192x192.png><link rel="shortcut icon" href=../favicon.ico><meta name=twitter:card content="summary"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="Blogs"><meta property="og:description" content><meta property="og:url" content="/blog/"><meta property="og:site_name" content="Priom Chowdhury"><meta property="og:image" content="/favicon.ico"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="1024"><link href=../blog/index.xml rel=alternate type=application/rss+xml title="Priom Chowdhury"></head><body class=green><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=../><div class=logo>PRIOM</div></a></div><div class=menu-trigger>menu</div></div><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=../>About</a></li><li><a href=../blog>Blog</a></li><li><a href=https://github.com/priom>GitHub</a></li><li><a href=https://linkedin.com/in/priomchowdhury>LinkedIn</a></li><li><a href=https://twitter.com/pri0m>Twitter</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=../>About</a></li><li><a href=../blog>Blog</a></li><li><a href=https://github.com/priom>GitHub</a></li><li><a href=https://linkedin.com/in/priomchowdhury>LinkedIn</a></li><li><a href=https://twitter.com/pri0m>Twitter</a></li></ul></nav></header><div class=content><div class=posts><div class="post on-list"><h1 class=post-title><a href=../blog/deployment-automation-for-goerli-testnet-in-10-minutes/>Deployment Automation for Goerli testnet in 10 minutes</a></h1><div class=post-meta><span class=post-date>2019-01-08</span>
-<span class=post-author>:: Priom</span></div><div class=post-content>Hello world, happy new year to everyone. Hope you are having a great start to 2019.
-Today, I’m going to share a short tutorial to quickly deploy the new Goerli Proof-of-Authority cross-client test network which was originally developed at [ETHBerlin](https://ethberlin.com) in September 2018 and then we, Afri (@5chdn) and ChainSafe (@chainsafeth), have been actively developing Goerli. As of now, Goerli is supported in Geth, Parity, Pantheon, Nethermind and EthereumJS. If you would like to follow the current development of Goerli, fork the Goerli testnet repo.</div><div><a class="read-more button" href=../blog/deployment-automation-for-goerli-testnet-in-10-minutes/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=../blog/rails-5-imgur-clone-tutorial-part-2/>Rails 5 Imgur Clone Tutorial…Part 2</a></h1><div class=post-meta><span class=post-date>2017-05-08</span>
-<span class=post-author>:: Priom</span></div><div class=post-content>Rails 5 Imgur Clone Tutorial…Part 2 Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.
-Be sure to check out the first part here if you haven’t already.
-First, signup and verify a new cloudinary account by going here, it’s my referral link to cloudinary which will give me little bit extra space.</div><div><a class="read-more button" href=../blog/rails-5-imgur-clone-tutorial-part-2/>Read more →</a></div></div><div class="post on-list"><h1 class=post-title><a href=../blog/rails-5-imgur-clone-tutorial-part-1/>Rails 5 Imgur Clone Tutorial…Part 1</a></h1><div class=post-meta><span class=post-date>2017-05-04</span>
-<span class=post-author>:: Priom</span></div><div class=post-content>Handle image upload and management painlessly with Carrierwave and Cloudinary and deploy on Heroku and share your photos fast with the world.
-Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more.</div><div><a class="read-more button" href=../blog/rails-5-imgur-clone-tutorial-part-1/>Read more →</a></div></div><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user"><span>&copy; 2023 All Rights Reserved by Priom</span></div></div></footer><script src=../assets/main.js></script>
-<script src=../assets/prism.js></script></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Blogs :: Priom Chowdhury</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="//localhost:1313/blog/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y6X6QFNNHQ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Y6X6QFNNHQ');
+        }
+      </script>
+
+
+<link rel="stylesheet" href="//localhost:1313/assets/style.css">
+
+  <link rel="stylesheet" href="//localhost:1313/assets/default.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="//localhost:1313/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="//localhost:1313/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Blogs">
+<meta property="og:description" content="" />
+<meta property="og:url" content="//localhost:1313/blog/" />
+<meta property="og:site_name" content="Priom Chowdhury" />
+
+  
+    <meta property="og:image" content="//localhost:1313/favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+  <link href="../blog/index.xml" rel="alternate" type="application/rss+xml" title="Priom Chowdhury" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="default">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="../">
+  <div class="logo">
+    PRIOM
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="../">About</a></li>
+        
+      
+        
+          <li><a href="https://farcaster.xyz/priom">Farcaster</a></li>
+        
+      
+        
+          <li><a href="https://github.com/priom">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/0xPriom">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://x.com/0xPriom">X</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="../">About</a></li>
+      
+    
+      
+        <li><a href="https://farcaster.xyz/priom">Farcaster</a></li>
+      
+    
+      
+        <li><a href="https://github.com/priom">GitHub</a></li>
+      
+    
+      
+        <li><a href="https://linkedin.com/in/0xPriom">LinkedIn</a></li>
+      
+    
+      
+        <li><a href="https://x.com/0xPriom">X</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+  
+  <div class="posts">
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="//localhost:1313/blog/deployment-automation-for-goerli-testnet-in-10-minutes/">Deployment Automation for Goerli testnet in 10 minutes</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2019-01-08
+          </span>
+          
+            <span class="post-author">:: Priom</span>
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+          
+          <p>Hello world, happy new year to everyone. Hope you are having a great start to 2019.</p>
+<h3 id="today-im-going-to-share-a-short-tutorial-to-quickly-deploy-the-new-goerli-proof-of-authority-cross-client-test-network-which-was-originally-developed-at-ethberlin-in-september-2018-and-then-we-afri-5chdn-and-chainsafe-chainsafeth-have-been-actively-developing-goerli-as-of-now-goerli-is-supported-in-geth-parity-pantheon-nethermind-and-ethereumjs">Today, I’m going to share a short tutorial to quickly deploy the new <strong><a href="https://goerli.com">Goerli</a></strong> Proof-of-Authority cross-client test network which was originally developed at [<strong>ETHBerlin]</strong>(<a href="https://ethberlin.com">https://ethberlin.com</a>) in September 2018 and then we, <a href="https://twitter.com/5chdn">Afri</a> (@5chdn) and <a href="https://twitter.com/chainsafeth">ChainSafe</a> (@chainsafeth), have been actively developing <strong>Goerli</strong>. As of now, Goerli <strong>is</strong> supported in <a href="https://github.com/ethereum/g**o-ethereum">Geth</a>, <a href="https://github.com/paritytech/parity-ethereum">Parity</a>, <a href="https://github.com/PegaSysEng/pantheon">Pantheon</a>, <a href="https://github.com/NethermindEth/nethermind">Nethermind</a> and <a href="https://github.com/ethereumjs/ethereumjs-client"><strong>EthereumJS</strong></a>.</h3>
+<h4 id="if-you-would-like-to-follow-the-current-development-of-goerli-fork-the-goerli-testnet-repo">If you would like to follow the current development of <strong>Goerli</strong>, fork the <strong>Goerli</strong> testnet <a href="https://github.com/goerli/testnet">repo</a>.</h4>
+<p><img src="https://cdn-images-1.medium.com/max/4000/1*2IvbXbp80TjyqbGKJMIuoQ.jpeg" alt="ETHBerlin — Goerli Demo"></p>
+          
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="../blog/deployment-automation-for-goerli-testnet-in-10-minutes/"> →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="//localhost:1313/blog/rails-5-imgur-clone-tutorial-part-2/">Rails 5 Imgur Clone Tutorial…Part 2</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2017-05-08
+          </span>
+          
+            <span class="post-author">:: Priom</span>
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+          
+          <p><img src="https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg" alt="Rails 5 Imgur Clone"></p>
+<h1 id="rails-5-imgur-clone-tutorialpart-2">Rails 5 Imgur Clone Tutorial…Part 2</h1>
+<p>Welcome to the second and final part of the Rails 5 Imgur clone, in this part, we will build the image uploading, manage configurations and then deploy to Heroku.</p>
+<blockquote>
+<p>Be sure to check out the first part <a href="https://medium.com/@priom/rails-5-imgur-clone-tutorial-part-1-8fa6e08d5d">here</a> if you haven’t already.</p></blockquote>
+<blockquote>
+<p>First, signup and verify a new cloudinary account by going <a href="http://cloudinary.com/invites/lpov9zyyucivvxsnalc5/vvf3cm3nlh4z8lk5ndii">here</a>, it’s my referral link to cloudinary which will give me little bit extra space.</p>
+          
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="../blog/rails-5-imgur-clone-tutorial-part-2/"> →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="//localhost:1313/blog/rails-5-imgur-clone-tutorial-part-1/">Rails 5 Imgur Clone Tutorial…Part 1</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2017-05-04
+          </span>
+          
+            <span class="post-author">:: Priom</span>
+          
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+          
+          
+          <p><img src="https://cdn-images-1.medium.com/max/5120/1*T_hnqYrj61dyo1TVPrDolw.jpeg" alt="Rails 5 Imgur Clone"></p>
+<p>Handle image upload and <a href="https://hackernoon.com/tagged/management">management</a> painlessly with Carrierwave and Cloudinary and deploy on <a href="https://hackernoon.com/tagged/heroku">Heroku</a> and share your photos fast with the world.</p>
+<p>Hi everyone, today I’m going to show you how to do image share and upload in your Rails 5 application very easily. This is what I have learned by browsing several outdated tutorials, blog posts and a bunch of documentation. Most of the articles out there are older Rails version 4 so, I hacked together the steps for integrating into Rails 5 which I’m currently using on some of the projects and continue to use more. Plus in the process, we are going to build an imgur clone today by adding all the CRUD (Create, Read, Update, Delete) functionalities.</p>
+          
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="../blog/rails-5-imgur-clone-tutorial-part-1/"> →</a>
+        </div>
+        
+      </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+      
+        <div class="copyright copyright--user">
+          <span> &copy; 2025 All Rights Reserved by Priom</span>
+      
+        </div>
+    </div>
+  </footer>
+  
+  <script src="//localhost:1313/assets/main.js"></script>
+  <script src="//localhost:1313/assets/prism.js"></script>
+  
+  
+  
+
+  
+  
+</div>
+
+</body>
+</html>
