@@ -10,7 +10,7 @@ googleAnalytics = "G-Y6X6QFNNHQ"
 contentTypeName = ""
 
 # ["orange", "blue", "red", "green", "pink"]
-themeColor = "default"
+themeColor = "yellow"
 
 # if you set this to 0, only submenu trigger will be visible
 showMenuItems = 5
@@ -68,7 +68,3 @@ url = "https://x.com/0xPriom"
 identifier = "linkedin"
 name = "LinkedIn"
 url = "https://linkedin.com/in/0xPriom"
-[[languages.en.menu.main]]
-identifier = "Farcaster"
-name = "Farcaster"
-url = "https://farcaster.xyz/priom"
