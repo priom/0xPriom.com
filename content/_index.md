@@ -2,8 +2,9 @@
 
 # Hello World
 
-I'm **Priom Chowdhury**, Founder & CEO of [HyperOdd](https://hyperodd.com), an institutional liquidity infrastructure protocol for perpetuals, options and prediction markets. 
-Previously an Ethereum core developer and co-founded [ChainSafe](https://chainsafe.io), a top-tier web 3.0 R&D firm since 2017.
+I'm **Priom Chowdhury**, Founder & CEO of [HyperOdd](https://hyperodd.com), an institutional-grade liquidity infrastructure protocol for perpetuals, options and prediction markets, powered by AI agents and quantitative finance.
+
+Previously I was an Ethereum core developer and co-founder of [ChainSafe](https://chainsafe.io), a leading Web 3.0 R&D firm founded in 2017.
 
 I'm passionate about building user-friendly new generation finance products and developer-focused engineering tools.
 
