@@ -2,11 +2,12 @@
 
 # Hello World
 
-I'm **Priom Chowdhury**, Founder of [HyperOdd](https://hyperodd.com), a decentralized leveraged prediction market, and previously co-founded [ChainSafe](https://chainsafe.io).
+I'm **Priom Chowdhury**, Founder & CEO of [HyperOdd](https://hyperodd.com), an institutional liquidity infrastructure protocol for perpetuals, options and prediction markets. 
+Previously an Ethereum core developer and co-founded [ChainSafe](https://chainsafe.io), a top-tier web 3.0 R&D firm since 2017.
 
-I'm passionate about building user-friendly decentralized finance products and developer-focused engineering tools.
+I'm passionate about building user-friendly new generation finance products and developer-focused engineering tools.
 
-I hold a Bachelor of Science in Computer Science from Saint Mary's University and have also served as an instructor of [Blockchain Development](https://georgebrown.ca/programs/blockchain-development-program-t175) at George Brown College.
+I hold a Bachelor of Science in Computer Science from SMU, Canada and have also served as an instructor of [Blockchain Development](https://georgebrown.ca/programs/blockchain-development-program-t175) at George Brown College.
 
 
 - Follow me on [Twitter](https://twitter.com/0xPriom)
